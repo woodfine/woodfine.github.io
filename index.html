@@ -16,22 +16,6 @@
         }
         body { font-family: var(--font-sans); background-color: var(--wf-bg); color: var(--wf-text); line-height: 1.6; margin: 0; padding: 0; display: flex; justify-content: center; }
         
-        /* ZERO-EXECUTION TOGGLE LOGIC */
-        #lang-toggle { display: none; }
-        .lang-en, .btn-en, .hash-en, .dl-en { display: block; }
-        .lang-es, .btn-es, .hash-es, .dl-es { display: none; }
-        
-        #lang-toggle:checked ~ .site-wrapper .lang-en,
-        #lang-toggle:checked ~ .site-wrapper .btn-en,
-        #lang-toggle:checked ~ .site-wrapper .hash-en,
-        #lang-toggle:checked ~ .site-wrapper .dl-en { display: none; }
-        
-        #lang-toggle:checked ~ .site-wrapper .lang-es,
-        #lang-toggle:checked ~ .site-wrapper .hash-es { display: block; }
-        
-        #lang-toggle:checked ~ .site-wrapper .btn-es,
-        #lang-toggle:checked ~ .site-wrapper .dl-es { display: inline-flex; }
-
         .site-wrapper { max-width: 800px; width: 100%; margin: 40px 20px; }
         .top-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--wf-muted); }
         .top-nav-links { display: flex; align-items: center; gap: 12px; }
@@ -46,7 +30,6 @@
             color: var(--wf-text); cursor: pointer; user-select: none; transition: all 0.2s ease; line-height: 1; text-decoration: none;
         }
         .pill-btn:hover { border-color: var(--wf-accent); color: var(--wf-accent); background: rgba(22, 70, 121, 0.05); }
-        .dl-en { display: inline-flex; }
         
         .container { background: var(--wf-card); padding: 56px 64px; box-shadow: 0 4px 24px rgba(0,0,0,0.04); border-top: 3px solid var(--wf-accent); border-radius: 4px; }
         h1, h2, h3 { color: var(--wf-accent); font-weight: 600; }
@@ -61,6 +44,25 @@
         .hash-string { color: var(--wf-accent); font-weight: 600; word-break: break-all; }
         
         @media (max-width: 600px) { .container { padding: 32px 24px; } h1 { font-size: 1.5rem; } .top-nav { flex-direction: column; align-items: flex-start; gap: 16px; } }
+
+        /* ZERO-EXECUTION TOGGLE LOGIC (Locked at bottom for absolute CSS priority) */
+        #lang-toggle { display: none; }
+        
+        .lang-en, .hash-en { display: block; }
+        .btn-en, .dl-en { display: inline-flex; }
+        
+        .lang-es, .hash-es { display: none; }
+        .btn-es, .dl-es { display: none; }
+        
+        #lang-toggle:checked ~ .site-wrapper .lang-en,
+        #lang-toggle:checked ~ .site-wrapper .hash-en { display: none; }
+        #lang-toggle:checked ~ .site-wrapper .btn-en,
+        #lang-toggle:checked ~ .site-wrapper .dl-en { display: none; }
+        
+        #lang-toggle:checked ~ .site-wrapper .lang-es,
+        #lang-toggle:checked ~ .site-wrapper .hash-es { display: block; }
+        #lang-toggle:checked ~ .site-wrapper .btn-es,
+        #lang-toggle:checked ~ .site-wrapper .dl-es { display: inline-flex; }
     </style>
 </head>
 <body>
@@ -108,7 +110,6 @@
             <h3>CONTACT FOR FURTHER INFORMATION:</h3>
             <p>Peter M. Woodfine<br>Executive Officer<br>Woodfine Management Corp.<br>595 Burrard Street, Lower Concourse<br>PO BOX 48295 Bentall<br>Vancouver, BC V7X 1A1<br>+1 604-375-1196<br>peter@woodfine.co<br>www.woodfine.co</p>
         </div>
-
         <div class="lang-es">
             <h1>WOODFINE CAPITAL PROJECTS</h1>
             <h2 class="subtitle">Comunicado de Prensa</h2>
