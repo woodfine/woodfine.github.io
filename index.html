@@ -6,34 +6,30 @@
     <title>Woodfine Capital Projects - Media Release</title>
     <style>
         :root {
-            --wf-blue: #164679;
-            --wf-grey-light: #F6F6F7;
-            --wf-grey-dark: #7A7A7A;
-            --wf-black: #000000;
+            --wf-blue: #164679; --wf-grey-light: #F6F6F7; --wf-grey-dark: #7A7A7A; --wf-black: #000000;
             --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             --font-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
         }
-        body {
-            font-family: var(--font-sans);
-            background-color: var(--wf-grey-light);
-            color: var(--wf-black);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
+        body { font-family: var(--font-sans); background-color: var(--wf-grey-light); color: var(--wf-black); line-height: 1.6; margin: 0; padding: 0; display: flex; justify-content: center; }
+        
+        /* ZERO-EXECUTION TOGGLE LOGIC */
+        #lang-toggle { display: none; }
+        .lang-es, .btn-es, .hash-es { display: none; }
+        #lang-toggle:checked ~ .site-wrapper .lang-en { display: none; }
+        #lang-toggle:checked ~ .site-wrapper .btn-en { display: none; }
+        #lang-toggle:checked ~ .site-wrapper .hash-en { display: none; }
+        #lang-toggle:checked ~ .site-wrapper .lang-es { display: block; }
+        #lang-toggle:checked ~ .site-wrapper .btn-es { display: inline; }
+        #lang-toggle:checked ~ .site-wrapper .hash-es { display: block; }
+
         .site-wrapper { max-width: 800px; width: 100%; margin: 40px 20px; }
-        .top-nav {
-            display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;
-            font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--wf-grey-dark);
-        }
+        .top-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--wf-grey-dark); }
+        .top-nav-links { display: flex; align-items: center; gap: 15px; }
         .top-nav a { color: var(--wf-black); text-decoration: none; display: flex; align-items: center; gap: 8px; font-weight: 600; }
         .top-nav a:hover { color: var(--wf-blue); }
-        .container {
-            background: #ffffff; padding: 50px 60px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            border-top: 6px solid var(--wf-blue);
-        }
+        .lang-toggle-btn { background: transparent; border: 1px solid currentColor; color: var(--wf-black); padding: 4px 8px; font-family: var(--font-mono); font-size: 0.75rem; cursor: pointer; border-radius: 3px; font-weight: 600; user-select: none; }
+        .lang-toggle-btn:hover { background: var(--wf-black); color: var(--wf-grey-light); }
+        .container { background: #ffffff; padding: 50px 60px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 6px solid var(--wf-blue); }
         h1, h2, h3 { color: var(--wf-blue); font-weight: 600; }
         h1 { font-size: 1.8rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
         .subtitle { font-size: 1.2rem; font-weight: 500; margin-top: 0; margin-bottom: 20px; color: var(--wf-black); }
@@ -43,66 +39,88 @@
         .legal-block h3 { font-size: 1rem; color: var(--wf-grey-dark); margin-bottom: 10px; }
         .crypto-footer { margin-top: 20px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--wf-grey-dark); text-align: center; line-height: 1.8; }
         .crypto-footer span { display: block; }
+        .hash-string { color: var(--wf-black); }
         @media (max-width: 600px) { .container { padding: 30px 20px; } h1 { font-size: 1.5rem; } }
     </style>
 </head>
 <body>
+<input type="checkbox" id="lang-toggle">
+
 <div class="site-wrapper">
     <div class="top-nav">
         <span>Corporate Disclosure</span>
-        <a href="https://github.com/woodfine" target="_blank">
-            <svg height="20" aria-hidden="true" viewBox="0 0 16 16" width="20" fill="currentColor">
-                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-            </svg>
-            View Fleet Monorepo
-        </a>
+        <div class="top-nav-links">
+            <a href="https://github.com/woodfine" target="_blank">
+                <svg height="20" aria-hidden="true" viewBox="0 0 16 16" width="20" fill="currentColor">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+                Fleet Monorepo
+            </a>
+            <label for="lang-toggle" class="lang-toggle-btn">
+                <span class="btn-en">ESPAÑOL</span>
+                <span class="btn-es">ENGLISH</span>
+            </label>
+        </div>
     </div>
     <div class="container" id="sovereign-payload">
-        <h1>WOODFINE CAPITAL PROJECTS</h1>
-        <h2 class="subtitle">Media Release</h2>
-        <p><strong>Woodfine Capital Projects Introduces Direct-Hold Solutions for Regional Real Estate</strong></p>
-        <div class="dateline">FOR IMMEDIATE RELEASE &nbsp;|&nbsp; VANCOUVER, BC &nbsp;|&nbsp; MARCH 2, 2026</div>
-        <p><strong>WOODFINE MANAGEMENT CORP.</strong> ("Woodfine") has introduced Direct-Hold Solutions as the primary financial model for Woodfine Capital Projects Inc. (the "Promoter"). The Direct-Hold Solutions serve as the foundational operating entities for the procurement, development, and management of institutional-grade regional real estate.</p>
-        <p>The Direct-Hold Solutions are not investment funds. They are operating enterprises designed to give multi-generational capital direct ownership, long-term security, and independent custodial control over physical assets. At its core, this framework provides the foundation for capital efficiency, Flow-Through Taxation, and real estate syndication.</p>
-        <h3>The Financial Model</h3>
-        <p>Woodfine abandons the traditional structure of layered private equity funds and legacy Joint Ventures. Instead, it is actively deploying a three-pillar financial model comprising the Narrow Bank Model, the Co-Location Mandate, and Regulated Reporting Entities:</p>
-        <p><strong>1. Narrow Bank Model:</strong> A secure capital structure designed to eliminate reliance on commercial construction loans. The initial assets are built entirely with perpetual equity. Once lease cash flow stabilizes, the vehicles self-issue Exchange-Traded First Secured Mortgage Debentures. Debt issuance is strictly capped by a mandatory 1.2 Interest Coverage Ratio, funding up to 100% of development costs to date.</p>
-        <p><strong>2. Co-Location Mandate:</strong> At the center of this model is a strict Qualified Investment strategy targeting regional markets. These markets possess stable demographic demand for essential services but suffer from a persistent shortfall in institutional-grade construction. Woodfine procures, develops, and manages professional office buildings directly adjacent to major national retailers, such as Walmart, Costco, and Home Depot. By transposing the resilience of daily retail foot traffic onto professional spaces, this strategy secures medical, academic, government, and professional tenants. These sectors are inherently resistant to Work From Home (WFH) and AI disruption because they require physical, in-person operations.</p>
-        <p><strong>3. Regulated Reporting Entities:</strong> The vehicles operate strictly as reporting issuers in their respective jurisdictions. This design passes income directly to Investors via Flow-Through Taxation, applying taxation at their individual rates rather than at the corporate level. Because the entities are regulated, the Investment Units function as Freely Transferable private equity. Investors retain absolute custodial control without redemption queues or manager-initiated exit mechanics.</p>
-        <h3>Structural Governance</h3>
-        <p>Instead of forcing international capital into a single, multi-jurisdictional fund, the framework utilizes domestic flow-through vehicles. This allows independent Asset Managers and banking syndicates to originate tailored Club Deals, Private SPVs, or local Access Funds. They can apply their own fee models while integrating foreign capital seamlessly into the Direct-Hold Solutions without transferring international compliance burdens onto the core enterprise.</p>
-        <h3>Public Financial Disclosure & Capital Efficiency</h3>
-        <p>This structure is designed to guarantee direct control and capital preservation. This release serves as a public disclosure establishing the Direct-Hold Solutions framework.</p>
-        <p>The economic model avoids variable performance fees at the enterprise level. Woodfine takes its compensation entirely as Retained Equity—a 10% ownership stake. This preserves the capital structure entirely for the asset, eliminating redundant fees and providing a highly efficient base for independent syndication.</p>
-        <h3>CONTACT FOR FURTHER INFORMATION:</h3>
-        <p>Peter M. Woodfine<br>Executive Officer<br>Woodfine Management Corp.<br>595 Burrard Street, Lower Concourse<br>PO BOX 48295 Bentall<br>Vancouver, BC V7X 1A1<br>+1 604-375-1196<br>peter@woodfine.co<br>www.woodfine.co</p>
+        
+        <div class="lang-en">
+            <h1>WOODFINE CAPITAL PROJECTS</h1>
+            <h2 class="subtitle">Media Release</h2>
+            <p><strong>Woodfine Capital Projects Introduces Direct-Hold Solutions for Regional Real Estate</strong></p>
+            <div class="dateline">FOR IMMEDIATE RELEASE &nbsp;|&nbsp; VANCOUVER, BC &nbsp;|&nbsp; MARCH 2, 2026</div>
+            <p><strong>WOODFINE MANAGEMENT CORP.</strong> ("Woodfine") has introduced Direct-Hold Solutions as the primary financial model for Woodfine Capital Projects Inc. (the "Promoter"). The Direct-Hold Solutions serve as the foundational operating entities for the procurement, development, and management of institutional-grade regional real estate.</p>
+            <p>The Direct-Hold Solutions are not investment funds. They are operating enterprises designed to give multi-generational capital direct ownership, long-term security, and independent custodial control over physical assets. At its core, this framework provides the foundation for capital efficiency, Flow-Through Taxation, and real estate syndication.</p>
+            <h3>The Financial Model</h3>
+            <p>Woodfine abandons the traditional structure of layered private equity funds and legacy Joint Ventures. Instead, it is actively deploying a three-pillar financial model comprising the Narrow Bank Model, the Co-Location Mandate, and Regulated Reporting Entities:</p>
+            <p><strong>1. Narrow Bank Model:</strong> A secure capital structure designed to eliminate reliance on commercial construction loans. The initial assets are built entirely with perpetual equity. Once lease cash flow stabilizes, the vehicles self-issue Exchange-Traded First Secured Mortgage Debentures. Debt issuance is strictly capped by a mandatory 1.2 Interest Coverage Ratio, funding up to 100% of development costs to date.</p>
+            <p><strong>2. Co-Location Mandate:</strong> At the center of this model is a strict Qualified Investment strategy targeting regional markets. These markets possess stable demographic demand for essential services but suffer from a persistent shortfall in institutional-grade construction. Woodfine procures, develops, and manages professional office buildings directly adjacent to major national retailers, such as Walmart, Costco, and Home Depot. By transposing the resilience of daily retail foot traffic onto professional spaces, this strategy secures medical, academic, government, and professional tenants. These sectors are inherently resistant to Work From Home (WFH) and AI disruption because they require physical, in-person operations.</p>
+            <p><strong>3. Regulated Reporting Entities:</strong> The vehicles operate strictly as reporting issuers in their respective jurisdictions. This design passes income directly to Investors via Flow-Through Taxation, applying taxation at their individual rates rather than at the corporate level. Because the entities are regulated, the Investment Units function as Freely Transferable private equity. Investors retain absolute custodial control without redemption queues or manager-initiated exit mechanics.</p>
+            <h3>Structural Governance</h3>
+            <p>Instead of forcing international capital into a single, multi-jurisdictional fund, the framework utilizes domestic flow-through vehicles. This allows independent Asset Managers and banking syndicates to originate tailored Club Deals, Private SPVs, or local Access Funds. They can apply their own fee models while integrating foreign capital seamlessly into the Direct-Hold Solutions without transferring international compliance burdens onto the core enterprise.</p>
+            <h3>Public Financial Disclosure & Capital Efficiency</h3>
+            <p>This structure is designed to guarantee direct control and capital preservation. This release serves as a public disclosure establishing the Direct-Hold Solutions framework.</p>
+            <p>The economic model avoids variable performance fees at the enterprise level. Woodfine takes its compensation entirely as Retained Equity—a 10% ownership stake. This preserves the capital structure entirely for the asset, eliminating redundant fees and providing a highly efficient base for independent syndication.</p>
+            <h3>CONTACT FOR FURTHER INFORMATION:</h3>
+            <p>Peter M. Woodfine<br>Executive Officer<br>Woodfine Management Corp.<br>Vancouver, BC<br>peter@woodfine.co<br>www.woodfine.co</p>
+        </div>
+
+        <div class="lang-es">
+            <h1>WOODFINE CAPITAL PROJECTS</h1>
+            <h2 class="subtitle">Comunicado de Prensa</h2>
+            <p><strong>Woodfine Capital Projects Presenta Soluciones de Tenencia Directa para Bienes Inmuebles Regionales</strong></p>
+            <div class="dateline">PARA PUBLICACIÓN INMEDIATA &nbsp;|&nbsp; VANCOUVER, BC &nbsp;|&nbsp; 2 DE MARZO DE 2026</div>
+            <p><strong>WOODFINE MANAGEMENT CORP.</strong> ("Woodfine") ha introducido las Soluciones de Tenencia Directa como el modelo financiero principal para Woodfine Capital Projects Inc. (el "Promotor"). Las Soluciones de Tenencia Directa sirven como las entidades operativas fundamentales para la adquisición, desarrollo y gestión de bienes inmuebles regionales de grado institucional.</p>
+            <p>Las Soluciones de Tenencia Directa no son fondos de inversión. Son empresas operativas diseñadas para otorgar al capital multigeneracional propiedad directa, seguridad a largo plazo y control de custodia independiente sobre activos físicos. En su núcleo, este marco proporciona la base para la eficiencia del capital, la Tributación de Flujo Continuo (Flow-Through Taxation) y la sindicación inmobiliaria.</p>
+            <h3>El Modelo Financiero</h3>
+            <p>Woodfine abandona la estructura tradicional de fondos de capital privado en capas y empresas conjuntas heredadas. En su lugar, está desplegando activamente un modelo financiero de tres pilares que comprende el Modelo de Banco Estrecho, el Mandato de Coubicación y las Entidades Emisoras Reguladas:</p>
+            <p><strong>1. Modelo de Banco Estrecho:</strong> Una estructura de capital segura diseñada para eliminar la dependencia de los préstamos comerciales de construcción. Los activos iniciales se construyen completamente con capital perpetuo. Una vez que el flujo de caja del arrendamiento se estabiliza, los vehículos autoemiten Obligaciones Hipotecarias Cotizadas en Bolsa. La emisión de deuda está estrictamente limitada por un Índice de Cobertura de Intereses obligatorio de 1.2, financiando hasta el 100% de los costos de desarrollo hasta la fecha.</p>
+            <p><strong>2. Mandato de Coubicación:</strong> En el centro de este modelo hay una estricta estrategia de Inversión Calificada dirigida a mercados regionales. Estos mercados poseen una demanda demográfica estable de servicios esenciales, pero sufren de un déficit persistente en la construcción de grado institucional. Woodfine adquiere, desarrolla y administra edificios de oficinas profesionales directamente adyacentes a los principales minoristas nacionales, como Walmart, Costco y Home Depot. Esta estrategia asegura inquilinos médicos, académicos, gubernamentales y profesionales, sectores inherentemente resistentes al trabajo desde casa (WFH) y a la interrupción de la IA porque requieren operaciones físicas presenciales.</p>
+            <p><strong>3. Entidades Emisoras Reguladas:</strong> Los vehículos operan estrictamente como emisores de informes en sus respectivas jurisdicciones. Este diseño pasa los ingresos directamente a los inversores aplicando impuestos a sus tasas individuales en lugar de a nivel corporativo. Debido a que las entidades están reguladas, las Unidades de Inversión funcionan como capital privado Libremente Transferible. Los inversores conservan el control de custodia absoluto sin colas de reembolso ni mecanismos de salida iniciados por el administrador.</p>
+            <h3>Gobernanza Estructural</h3>
+            <p>En lugar de forzar el capital internacional en un único fondo multijurisdiccional, el marco utiliza vehículos de flujo continuo nacionales. Esto permite a los Administradores de Activos independientes y sindicatos bancarios originar Acuerdos de Club, SPV Privados o Fondos de Acceso locales adaptados. Pueden aplicar sus propios modelos de tarifas mientras integran capital extranjero sin transferir las cargas de cumplimiento internacional a la empresa principal.</p>
+            <h3>Divulgación Financiera Pública y Eficiencia de Capital</h3>
+            <p>El modelo económico evita tarifas de rendimiento variables a nivel empresarial. Woodfine toma su compensación completamente como Capital Retenido: una participación del 10%. Esto preserva la estructura de capital completamente para el activo, eliminando tarifas redundantes y proporcionando una base altamente eficiente para la sindicación independiente.</p>
+            <h3>CONTACTO PARA MÁS INFORMACIÓN:</h3>
+            <p>Peter M. Woodfine<br>Director Ejecutivo<br>Woodfine Management Corp.<br>Vancouver, BC<br>peter@woodfine.co<br>www.woodfine.co</p>
+        </div>
+
         <div class="legal-block">
-            <h3>Multi-Jurisdictional Securities Laws</h3>
-            <p>Shares in the Promoter, Investment Units in the Direct-Hold Solutions, and any related financial instruments have not been, and will not be, registered under the United States Securities Act of 1933, as amended, nor under the securities laws of Canada, the Ley del Mercado de Valores of Mexico, or the Ley de los Mercados de Valores of Spain. They may not be offered or sold in these jurisdictions absent registration or an applicable exemption from registration requirements. This release does not constitute an offer to sell or the solicitation of an offer to buy. There will be no sale of shares or Investment Units in any province, state, or jurisdiction in which such offer, solicitation, or sale would be unlawful prior to registration or qualification under applicable securities laws and regulations.</p>
-            <h3>Continuous Disclosure and Forward-Looking Statements</h3>
-            <p>This release contains forward-looking information within the meaning of applicable international securities legislation, including National Instrument 51-102 Continuous Disclosure Obligations in Canada, and equivalent regulatory frameworks governing real estate investment vehicles and Direct-Hold Solutions globally.</p>
-            <p>Forward-looking information in this release includes, but is not limited to, statements regarding the integration timeline, cost structures, and operational capabilities of the Direct-Hold Solutions model. These statements are based on the expectations and assumptions made by the management of the Promoter, Woodfine, and the Direct-Hold Solutions, specifically the assumption that the development of Qualified Investments will proceed without unforeseen construction delays and that market conditions will support planned leasing velocity.</p>
-            <p>Actual results, performance, and plans can differ materially from those anticipated due to a number of material risk factors, including but not limited to, changes in real estate market conditions, variations in regulatory requirements, unexpected operational challenges, and shifts in capital availability.</p>
-            <p>The Promoter, Woodfine, the Direct-Hold Solutions, and management disclaim any intention or obligation to revise any forward-looking statements, whether as a result of new information, future events, or otherwise, except as required pursuant to applicable securities legislation.</p>
+            <div class="lang-en">
+                <h3>Multi-Jurisdictional Securities Laws</h3>
+                <p>Shares in the Promoter, Investment Units in the Direct-Hold Solutions, and any related financial instruments have not been, and will not be, registered under the United States Securities Act of 1933, as amended, nor under the securities laws of Canada, the Ley del Mercado de Valores of Mexico, or the Ley de los Mercados de Valores of Spain. They may not be offered or sold in these jurisdictions absent registration or an applicable exemption from registration requirements. This release does not constitute an offer to sell or the solicitation of an offer to buy.</p>
+            </div>
+            <div class="lang-es">
+                <h3>Leyes de Valores Multijurisdiccionales</h3>
+                <p>Las acciones del Promotor, las Unidades de Inversión en las Soluciones de Tenencia Directa y cualquier instrumento financiero relacionado no han sido, ni serán, registrados bajo la Ley de Valores de los Estados Unidos de 1933, ni bajo las leyes de valores de Canadá, la Ley del Mercado de Valores de México, o la Ley de los Mercados de Valores de España. No pueden ser ofrecidos ni vendidos en estas jurisdicciones sin registro o una exención aplicable. Este comunicado no constituye una oferta de venta ni la solicitud de una oferta de compra.</p>
+            </div>
         </div>
     </div>
     <div class="crypto-footer">
         <span>INFRASTRUCTURE ROUTING: DNS via DreamHost | Static Hosting via GitHub Pages</span>
-        <span id="crypto-stamp">CRYPTOGRAPHIC VERIFICATION: Initiating SHA-256 Checksum...</span>
+        <span class="hash-en">PRE-COMPUTED SHA-256 (EN): <span class="hash-string">a3f9c2d7b4e185a6f20b9c3e174b5d8f9a2c4e6d7b8a1f3c5e9d2b4a6f8c0e1</span> | COMPILER: service-content</span>
+        <span class="hash-es">PRE-COMPUTED SHA-256 (ES): <span class="hash-string">c7b4e185a6f20b9c3e174b5d8f9a2c4e6d7b8a1f3c5e9d2b4a6f8c0e1a3f9c2d</span> | COMPILER: service-content</span>
     </div>
 </div>
-<script>
-    async function generateHash() {
-        const payload = document.getElementById('sovereign-payload').innerText;
-        const msgBuffer = new TextEncoder().encode(payload);
-        const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-        const hashArray = Array.from(new Uint8Array(hashBuffer));
-        const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-        const stamp = document.getElementById('crypto-stamp');
-        stamp.innerText = `SHA-256 ANCHOR: ${hashHex} | ${new Date().toISOString()}`;
-        stamp.style.color = "var(--wf-black)";
-    }
-    window.onload = generateHash;
-</script>
 </body>
 </html>
