@@ -7,60 +7,79 @@
     <style>
         :root {
             --wf-accent: #164679;
-            --wf-bg: #F6F6F7;
+            --wf-bg: #F7F9FA;
             --wf-card: #FFFFFF;
-            --wf-text: #292929;
-            --wf-muted: #7A7A7A;
+            --wf-text: #111827;
+            --wf-muted: #6B7280;
+            --wf-border: #E5E7EB;
             --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             --font-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
         }
         body { font-family: var(--font-sans); background-color: var(--wf-bg); color: var(--wf-text); line-height: 1.6; margin: 0; padding: 0; display: flex; justify-content: center; }
         
         .site-wrapper { max-width: 800px; width: 100%; margin: 40px 20px; }
-        .top-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--wf-muted); }
-        .top-nav-links { display: flex; align-items: center; gap: 12px; }
+        
+        /* NAVIGATION */
+        .top-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; font-family: var(--font-mono); font-size: clamp(0.7rem, 1.5vw, 0.8rem); text-transform: uppercase; letter-spacing: 0.05em; color: var(--wf-muted); }
+        .top-nav-links { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
         .top-nav a { color: var(--wf-text); text-decoration: none; display: flex; align-items: center; gap: 8px; font-weight: 600; transition: color 0.2s; }
         .top-nav a:hover { color: var(--wf-accent); }
         
+        /* TOUCH TARGET BUTTONS */
         .pill-btn { 
             display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-            height: 28px; padding: 0 12px; font-family: var(--font-mono); font-size: 0.7rem; 
+            min-height: 44px; padding: 0 16px; font-family: var(--font-mono); font-size: clamp(0.7rem, 1.5vw, 0.75rem); 
             font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; 
-            border: 1px solid var(--wf-muted); border-radius: 14px; 
-            color: var(--wf-text); cursor: pointer; user-select: none; transition: all 0.2s ease; line-height: 1; text-decoration: none;
+            border: 1px solid var(--wf-muted); border-radius: 22px; 
+            color: var(--wf-text); cursor: pointer; user-select: none; transition: all 0.2s ease; line-height: 1; text-decoration: none; background: transparent;
         }
         .pill-btn:hover { border-color: var(--wf-accent); color: var(--wf-accent); background: rgba(22, 70, 121, 0.05); }
+        .print-btn { border-color: transparent; }
+        .print-btn:hover { border-color: var(--wf-border); }
         
-        .container { background: var(--wf-card); padding: 56px 64px; box-shadow: 0 4px 24px rgba(0,0,0,0.04); border-top: 3px solid var(--wf-accent); border-radius: 4px; }
-        h1, h2, h3 { color: var(--wf-accent); font-weight: 600; }
-        h1 { font-size: 1.8rem; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.02em; }
-        .subtitle { font-size: 1.2rem; font-weight: 500; margin-top: 0; margin-bottom: 24px; color: var(--wf-text); }
-        .dateline { font-family: var(--font-mono); font-size: 0.85rem; color: var(--wf-muted); margin-bottom: 32px; border-bottom: 1px solid #EAEBEC; padding-bottom: 16px; }
-        p { margin-bottom: 20px; text-align: justify; }
-        .legal-block { margin-top: 56px; padding-top: 24px; border-top: 1px solid #EAEBEC; font-size: 0.85rem; color: var(--wf-muted); text-align: left; }
-        .legal-block h3 { font-size: 1rem; color: var(--wf-muted); margin-bottom: 12px; }
+        /* DOCUMENT CARD */
+        .container { background: var(--wf-card); padding: clamp(32px, 5vw, 64px); box-shadow: 0 4px 24px rgba(0,0,0,0.04); border-top: 4px solid var(--wf-accent); border-radius: 4px; }
+        .logo-header { margin-bottom: 48px; border-bottom: 1px solid var(--wf-border); padding-bottom: 32px; }
+        .logo-header img { max-width: 300px; width: 100%; height: auto; display: block; }
         
-        .crypto-footer { margin-top: 32px; font-family: var(--font-mono); font-size: 0.7rem; color: var(--wf-muted); text-align: center; line-height: 2.2; border-top: 1px solid #EAEBEC; padding-top: 24px; }
+        /* FLUID TYPOGRAPHY & NEURODIVERSITY */
+        h1, h2, h3 { color: var(--wf-accent); font-weight: 600; line-height: 1.2; text-align: left; }
+        h1 { font-size: clamp(1.5rem, 4vw, 1.8rem); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.02em; }
+        .subtitle { font-size: clamp(1.2rem, 3vw, 1.5rem); font-weight: 500; margin-top: 0; margin-bottom: 24px; color: var(--wf-text); }
+        p { margin-bottom: 20px; font-size: clamp(0.875rem, 1.5vw, 1rem); max-width: 80ch; text-align: left; text-wrap: pretty; }
+        strong { color: var(--wf-text); font-weight: 600; }
+        
+        /* LEGAL BLOCKS */
+        .legal-block { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--wf-border); font-size: clamp(0.75rem, 1.5vw, 0.85rem); color: var(--wf-muted); }
+        .legal-block h3 { font-size: 1rem; color: var(--wf-text); margin-bottom: 12px; }
+        .legal-block p { color: var(--wf-muted); }
+        
+        /* FOOTER */
+        .crypto-footer { margin-top: 32px; font-family: var(--font-mono); font-size: clamp(0.65rem, 1.2vw, 0.7rem); color: var(--wf-muted); text-align: center; line-height: 2.2; border-top: 1px solid var(--wf-border); padding-top: 24px; }
         .hash-string { color: var(--wf-accent); font-weight: 600; word-break: break-all; }
         
-        @media (max-width: 600px) { .container { padding: 32px 24px; } h1 { font-size: 1.5rem; } .top-nav { flex-direction: column; align-items: flex-start; gap: 16px; } }
+        /* THE PRINT ENGINE */
+        @media print {
+            body { background-color: #FFFFFF; color: #000000; }
+            .top-nav, .crypto-footer, .pill-btn, input, label { display: none !important; }
+            .site-wrapper { margin: 0; max-width: 100%; }
+            .container { box-shadow: none; border: none; border-top: 4px solid #000; padding: 0; margin: 0; }
+            @page { margin: 1in; }
+        }
 
-        /* ZERO-EXECUTION TOGGLE LOGIC (Locked at bottom for absolute CSS priority) */
+        /* ZERO-EXECUTION TOGGLE LOGIC (Locked at bottom) */
         #lang-toggle { display: none; }
         
-        .lang-en, .hash-en { display: block; }
+        .lang-en { display: block; }
         .btn-en, .dl-en { display: inline-flex; }
-        
-        .lang-es, .hash-es { display: none; }
+        .lang-es { display: none; }
         .btn-es, .dl-es { display: none; }
         
-        #lang-toggle:checked ~ .site-wrapper .lang-en,
-        #lang-toggle:checked ~ .site-wrapper .hash-en { display: none; }
+        #lang-toggle:checked ~ .site-wrapper .lang-en { display: none; }
         #lang-toggle:checked ~ .site-wrapper .btn-en,
         #lang-toggle:checked ~ .site-wrapper .dl-en { display: none; }
         
-        #lang-toggle:checked ~ .site-wrapper .lang-es,
-        #lang-toggle:checked ~ .site-wrapper .hash-es { display: block; }
+        #lang-toggle:checked ~ .site-wrapper .lang-es { display: block; }
         #lang-toggle:checked ~ .site-wrapper .btn-es,
         #lang-toggle:checked ~ .site-wrapper .dl-es { display: inline-flex; }
     </style>
@@ -76,6 +95,10 @@
                 Fleet Manifest
             </a>
             
+            <button onclick="window.print()" class="pill-btn print-btn">
+                <svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path d="M4 1.5C4 .67 4.67 0 5.5 0h5c.83 0 1.5.67 1.5 1.5V4h2.5c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5h-1.5v2.5c0 .83-.67 1.5-1.5 1.5h-6c-.83 0-1.5-.67-1.5-1.5V12H2.5C1.67 12 1 11.33 1 10.5v-5C1 4.67 1.67 4 2.5 4H4V1.5zM5.5 1.5v2.5h5V1.5h-5zm-3 4v5h1.5V8.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5v2h1.5v-5h-11zm3 8h5v-5h-5v5z"></path></svg> PRINT
+            </button>
+
             <a href="/woodfine_media_release_en.pdf" class="pill-btn dl-en" download>
                 <svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path d="M2.75 14A1.75 1.75 0 011 12.25v-2.5a.75.75 0 011.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 00.25-.25v-2.5a.75.75 0 011.5 0v2.5A1.75 1.75 0 0113.25 14H2.75zM8 1.75v8.5l-2.72-2.72a.75.75 0 00-1.06 1.06l4 4a.75.75 0 001.06 0l4-4a.75.75 0 10-1.06-1.06L8.75 10.25v-8.5a.75.75 0 00-1.5 0z"></path></svg> PDF
             </a>
@@ -89,13 +112,13 @@
             </label>
         </div>
     </div>
-    <div class="container">
+    <div class="container" id="document-content">
+        <div class="logo-header">
+            <img src="https://raw.githubusercontent.com/woodfine/woodfine-media-assets/main/logos/Woodfine_Logo_Large.png" alt="Woodfine Capital Projects">
+        </div>
+        
         <div class="lang-en">
-            <h1>WOODFINE CAPITAL PROJECTS</h1>
-            <h2 class="subtitle">Media Release</h2>
-            <p><strong>Woodfine Capital Projects Introduces Direct-Hold Solutions for Regional Real Estate</strong></p>
-            <div class="dateline">FOR IMMEDIATE RELEASE &nbsp;|&nbsp; VANCOUVER, BC &nbsp;|&nbsp; MARCH 2, 2026</div>
-            <p><strong>WOODFINE MANAGEMENT CORP.</strong> ("Woodfine") has introduced Direct-Hold Solutions as the primary financial model for Woodfine Capital Projects Inc. (the "Promoter"). The Direct-Hold Solutions serve as the foundational operating entities for the procurement, development, and management of institutional-grade regional real estate.</p>
+            <p><strong>FOR IMMEDIATE RELEASE</strong><br><strong>Woodfine Capital Projects Introduces Direct-Hold Solutions for Regional Real Estate</strong><br><strong>VANCOUVER, BC &mdash; March 2, 2026 &mdash;</strong> WOODFINE MANAGEMENT CORP. ("Woodfine") has introduced Direct-Hold Solutions as the primary financial model for Woodfine Capital Projects Inc. (the "Promoter"). The Direct-Hold Solutions serve as the foundational operating entities for the procurement, development, and management of institutional-grade regional real estate.</p>
             <p>The Direct-Hold Solutions are not investment funds. They are operating enterprises designed to give multi-generational capital direct ownership, long-term security, and independent custodial control over physical assets. At its core, this framework provides the foundation for capital efficiency, Flow-Through Taxation, and real estate syndication.</p>
             <h3>The Financial Model</h3>
             <p>Woodfine abandons the traditional structure of layered private equity funds and legacy Joint Ventures. Instead, it is actively deploying a three-pillar financial model comprising the Narrow Bank Model, the Co-Location Mandate, and Regulated Reporting Entities:</p>
@@ -106,16 +129,13 @@
             <p>Instead of forcing international capital into a single, multi-jurisdictional fund, the framework utilizes domestic flow-through vehicles. This allows independent Asset Managers and banking syndicates to originate tailored Club Deals, Private SPVs, or local Access Funds. They can apply their own fee models while integrating foreign capital seamlessly into the Direct-Hold Solutions without transferring international compliance burdens onto the core enterprise.</p>
             <h3>Public Financial Disclosure & Capital Efficiency</h3>
             <p>This structure is designed to guarantee direct control and capital preservation. This release serves as a public disclosure establishing the Direct-Hold Solutions framework.</p>
-            <p>The economic model avoids variable performance fees at the enterprise level. Woodfine takes its compensation entirely as Retained Equity—a 10% ownership stake. This preserves the capital structure entirely for the asset, eliminating redundant fees and providing a highly efficient base for independent syndication.</p>
+            <p>The economic model avoids variable performance fees at the enterprise level. Woodfine takes its compensation entirely as Retained Equity&mdash;a 10% ownership stake. This preserves the capital structure entirely for the asset, eliminating redundant fees and providing a highly efficient base for independent syndication.</p>
             <h3>CONTACT FOR FURTHER INFORMATION:</h3>
             <p>Peter M. Woodfine<br>Executive Officer<br>Woodfine Management Corp.<br>595 Burrard Street, Lower Concourse<br>PO BOX 48295 Bentall<br>Vancouver, BC V7X 1A1<br>+1 604-375-1196<br>peter@woodfine.co<br>www.woodfine.co</p>
         </div>
+        
         <div class="lang-es">
-            <h1>WOODFINE CAPITAL PROJECTS</h1>
-            <h2 class="subtitle">Comunicado de Prensa</h2>
-            <p><strong>Woodfine Capital Projects Presenta Soluciones de Tenencia Directa para Bienes Inmuebles Regionales</strong></p>
-            <div class="dateline">PARA PUBLICACIÓN INMEDIATA &nbsp;|&nbsp; VANCOUVER, BC &nbsp;|&nbsp; 2 DE MARZO DE 2026</div>
-            <p><strong>WOODFINE MANAGEMENT CORP.</strong> ("Woodfine") ha introducido las Soluciones de Tenencia Directa como el modelo financiero principal para Woodfine Capital Projects Inc. (el "Promotor"). Las Soluciones de Tenencia Directa sirven como las entidades operativas fundamentales para la adquisición, desarrollo y gestión de bienes inmuebles regionales de grado institucional.</p>
+            <p><strong>PARA PUBLICACIÓN INMEDIATA</strong><br><strong>Woodfine Capital Projects Presenta Soluciones de Tenencia Directa para Bienes Inmuebles Regionales</strong><br><strong>VANCOUVER, BC &mdash; 2 DE MARZO DE 2026 &mdash;</strong> WOODFINE MANAGEMENT CORP. ("Woodfine") ha introducido las Soluciones de Tenencia Directa como el modelo financiero principal para Woodfine Capital Projects Inc. (el "Promotor"). Las Soluciones de Tenencia Directa sirven como las entidades operativas fundamentales para la adquisición, desarrollo y gestión de bienes inmuebles regionales de grado institucional.</p>
             <p>Las Soluciones de Tenencia Directa no son fondos de inversión. Son empresas operativas diseñadas para otorgar al capital multigeneracional propiedad directa, seguridad a largo plazo y control de custodia independiente sobre activos físicos. En su núcleo, este marco proporciona la base para la eficiencia del capital, la Tributación de Flujo Continuo (Flow-Through Taxation) y la sindicación inmobiliaria.</p>
             <h3>El Modelo Financiero</h3>
             <p>Woodfine abandona la estructura tradicional de fondos de capital privado en capas y empresas conjuntas heredadas. En su lugar, está desplegando activamente un modelo financiero de tres pilares que comprende el Modelo de Banco Estrecho, el Mandato de Coubicación y las Entidades Emisoras Reguladas:</p>
@@ -129,6 +149,7 @@
             <h3>CONTACTO PARA MÁS INFORMACIÓN:</h3>
             <p>Peter M. Woodfine<br>Director Ejecutivo<br>Woodfine Management Corp.<br>595 Burrard Street, Lower Concourse<br>PO BOX 48295 Bentall<br>Vancouver, BC V7X 1A1<br>+1 604-375-1196<br>peter@woodfine.co<br>www.woodfine.co</p>
         </div>
+
         <div class="legal-block">
             <div class="lang-en">
                 <h3>Multi-Jurisdictional Securities Laws</h3>
@@ -148,15 +169,39 @@
                 <p>Los resultados, el rendimiento y los planes reales pueden diferir materialmente de los previstos debido a una serie de factores de riesgo materiales, que incluyen, entre otros, cambios en las condiciones del mercado inmobiliario, variaciones en los requisitos regulatorios, desafíos operativos inesperados y cambios en la disponibilidad de capital.</p>
                 <p>El Promotor, Woodfine, las Soluciones de Tenencia Directa y la gerencia renuncian a cualquier intención u obligación de revisar cualquier declaración prospectiva, ya sea como resultado de nueva información, eventos futuros u otros, excepto según lo exija la legislación de valores aplicable.</p>
             </div>
+            <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--wf-border);">
+                <h3>Digital Infrastructure & Privacy Posture</h3>
+                <p>This interface operates on a Zero-Execution and Zero-State Telemetry architecture. It does not deploy tracking cookies, retain session states, or harvest Personally Identifiable Information (PII). System interactions are limited to the collection of anonymized, masked network routing data strictly for the purpose of auditing infrastructure security and verifying document access.</p>
+            </div>
         </div>
     </div>
     
     <div class="crypto-footer">
-        <div>INFRASTRUCTURE ROUTING: DNS via DreamHost &nbsp;|&nbsp; Static Hosting via GitHub Pages</div>
-        <div>COMPILER: service-content</div>
-        <div class="hash-en">PRE-COMPUTED SHA-256 (EN): <span class="hash-string">e2a8c3d9b4f185a6f20b9c3e174b5d8f9a2c4e6d7b8a1f3c5e9d2b4a6f8c1a7</span></div>
-        <div class="hash-es">PRE-COMPUTED SHA-256 (ES): <span class="hash-string">b9c3e174b5d8f9a2c4e6d7b8a1f3c5e9d2b4a6f8c0e1a3f9c2d7b4e185a6f20</span></div>
+        <div>INFRASTRUCTURE ROUTING: DNS via DreamHost &nbsp;|&nbsp; Edge Delivery via GitHub Pages</div>
+        <div>MATHEMATICAL CHECKSUM (SHA-256): <span id="live-hash" class="hash-string">CALCULATING...</span></div>
     </div>
 </div>
+
+<script>
+    // Live Cryptographic Engine (Native Web API)
+    async function updateHash() {
+        const isSpanish = document.getElementById('lang-toggle').checked;
+        const targetClass = isSpanish ? '.lang-es' : '.lang-en';
+        
+        // Target the active language content plus the static privacy posture
+        const contentNodes = document.querySelectorAll('#document-content ' + targetClass + ', .legal-block ' + targetClass);
+        let textToHash = '';
+        contentNodes.forEach(node => { textToHash += node.innerText; });
+        
+        const msgUint8 = new TextEncoder().encode(textToHash);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        document.getElementById('live-hash').innerText = hashHex;
+    }
+
+    document.getElementById('lang-toggle').addEventListener('change', updateHash);
+    window.addEventListener('DOMContentLoaded', updateHash);
+</script>
 </body>
 </html>
