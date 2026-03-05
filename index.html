@@ -6,15 +6,14 @@
     <meta name="color-scheme" content="light"> 
     <title>Woodfine Capital Projects - Corporate Disclosure</title>
     <style>
-        /* 1. RESET & VARIABLES */
+        /* 1. RESET & 8-PIXEL BASELINE GRID */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         :root {
             --wf-accent: #164679;
             --wf-bg: #F7F9FA;
             --wf-card: #FFFFFF;
             --wf-text: #111827;
-            --wf-muted: #6B7280;
-            --wf-border: #E5E7EB;
+            --wf-border: #111827; /* Darkened border for structural brutalism */
             --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             --font-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
         }
@@ -22,54 +21,52 @@
             font-family: var(--font-sans);
             background-color: var(--wf-bg);
             color: var(--wf-text);
-            line-height: 1.7;
+            line-height: 1.5; /* 24px baseline */
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 2. STICKY FROSTED NAVIGATION */
+        /* 2. BRUTALIST NAVIGATION BAR */
         .top-bar {
             position: sticky;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: var(--wf-card);
             border-bottom: 1px solid var(--wf-border);
             z-index: 100;
             display: flex;
             justify-content: center;
-            padding: 16px 24px;
+            padding: 16px 24px; /* 8px multiples */
         }
         .nav-content {
             width: 100%;
-            max-width: 1000px;
+            max-width: 1024px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         .brand-logo img {
-            height: 28px; /* Strict institutional sizing */
+            height: 24px; 
             width: auto;
             display: block;
         }
 
-        /* 3. INTERACTIVE TOUCH TARGETS */
-        .nav-actions { display: flex; gap: 12px; align-items: center; }
-        .pill-btn {
+        /* 3. SHARP TOUCH TARGETS (No rounded corners) */
+        .nav-actions { display: flex; gap: 8px; align-items: center; }
+        .sys-btn {
             display: inline-flex; align-items: center; gap: 8px;
-            height: 36px; padding: 0 16px;
-            border-radius: 18px; border: 1px solid var(--wf-border);
+            height: 32px; padding: 0 16px;
+            border: 1px solid var(--wf-border); border-radius: 0;
             font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
             color: var(--wf-text); background: var(--wf-card); cursor: pointer; text-decoration: none;
-            transition: all 0.2s ease;
+            transition: background-color 0.1s ease;
         }
-        .pill-btn:hover { border-color: var(--wf-accent); color: var(--wf-accent); }
-        .pill-btn svg { width: 14px; height: 14px; }
+        .sys-btn:hover { background: #E5E7EB; }
+        .sys-btn.active-toggle { background: var(--wf-text); color: var(--wf-card); }
 
-        /* 4. THE READING CANVAS */
+        /* 4. THE SWISS CANVAS (Flat, unshadowed) */
         .document-wrapper {
             width: 100%;
-            max-width: 1000px;
+            max-width: 1024px;
             margin: 48px auto 96px;
             padding: 0 24px;
             display: grid;
@@ -79,54 +76,64 @@
         }
         .reading-column {
             background: var(--wf-card);
-            padding: 48px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            border-top: 4px solid var(--wf-accent);
+            padding: 48px 56px;
+            border: 1px solid var(--wf-border);
+            border-top: 8px solid var(--wf-accent);
         }
         .metadata-column {
             position: sticky;
-            top: 100px;
+            top: 96px;
             font-family: var(--font-mono);
             font-size: 0.75rem;
-            color: var(--wf-muted);
+            color: var(--wf-text);
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 32px;
+            line-height: 1.5;
         }
-        .meta-block { border-left: 2px solid var(--wf-border); padding-left: 16px; }
-        .meta-label { text-transform: uppercase; font-weight: 600; color: var(--wf-text); margin-bottom: 4px; display: block; }
+        .meta-block { border-left: 2px solid var(--wf-accent); padding-left: 16px; }
+        .meta-label { text-transform: uppercase; font-weight: 600; margin-bottom: 8px; display: block; }
 
         /* 5. TYPOGRAPHY & NEURODIVERSITY */
-        h1 { font-size: clamp(1.8rem, 4vw, 2.2rem); color: var(--wf-accent); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 24px; text-transform: uppercase; }
-        h3 { font-size: 1.1rem; color: var(--wf-text); font-weight: 600; margin-top: 40px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--wf-border); }
-        p { font-size: 1.05rem; color: #374151; margin-bottom: 20px; text-wrap: pretty; }
-        strong { color: var(--wf-text); font-weight: 600; }
+        .release-header { margin-bottom: 32px; border-bottom: 2px solid var(--wf-border); padding-bottom: 16px; }
+        .release-flag { font-family: var(--font-mono); font-weight: 600; font-size: 0.875rem; letter-spacing: 0.05em; margin-bottom: 16px; display: block; }
+        
+        h1 { font-size: clamp(2rem, 5vw, 2.5rem); color: var(--wf-text); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 24px; font-weight: 700; text-transform: none; text-wrap: balance; }
+        h3 { font-size: 1.25rem; color: var(--wf-text); font-weight: 700; margin-top: 48px; margin-bottom: 16px; }
+        
+        p { font-size: 1rem; color: var(--wf-text); margin-bottom: 24px; text-wrap: pretty; max-width: 80ch; }
+        strong { font-weight: 700; }
 
-        /* 6. LEGAL BLOCK */
-        .legal-block { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--wf-border); }
-        .legal-block h3 { font-size: 0.85rem; color: var(--wf-muted); margin-top: 24px; border: none; padding: 0; }
-        .legal-block p { font-size: 0.8rem; color: var(--wf-muted); }
+        /* 6. LEGAL BLOCK (Absolute Transparency) */
+        .legal-block { 
+            margin-top: 80px; 
+            padding-top: 40px; 
+            border-top: 4px solid var(--wf-border); 
+        }
+        .legal-block h3 { margin-top: 32px; margin-bottom: 16px; font-size: 1rem; }
+        /* Notice: Paragraphs inside legal block share exact same size and color as body text */
 
-        /* 7. THE PRINT ENGINE */
+        /* 7. PAGED MEDIA PRINT ENGINE (Level 3.0) */
         @media print {
-            body { background: #fff; }
-            .top-bar, .metadata-column, .pill-btn, input, label { display: none !important; }
-            .document-wrapper { display: block; margin: 0; padding: 0; max-width: 100%; }
-            .reading-column { box-shadow: none; border: none; padding: 0; }
-            h1 { color: #000; }
             @page { margin: 1in; }
+            body { background: #fff; }
+            .top-bar, .metadata-column, .sys-btn, input, label { display: none !important; }
+            .document-wrapper { display: block; margin: 0; padding: 0; max-width: 100%; border: none; }
+            .reading-column { border: none; padding: 0; border-top: 4px solid #000; }
+            
+            /* Mathematical break prevention */
+            h1, h3, .release-flag { break-after: avoid; page-break-after: avoid; }
+            p { break-inside: avoid; page-break-inside: avoid; orphans: 3; widows: 3; }
+            .legal-block { break-before: always; page-break-before: always; }
         }
 
         /* 8. ABSOLUTE ZERO-EXECUTION STATE MACHINE */
         #lang-toggle { display: none; }
         
-        /* Default: English Visible, Spanish Hidden */
         .lang-es { display: none !important; }
         .dl-es { display: none !important; }
         .lbl-es { display: none !important; }
 
-        /* Toggled: Spanish Visible, English Hidden */
         #lang-toggle:checked ~ .interface-layer .lang-en { display: none !important; }
         #lang-toggle:checked ~ .interface-layer .dl-en { display: none !important; }
         #lang-toggle:checked ~ .interface-layer .lbl-en { display: none !important; }
@@ -135,10 +142,9 @@
         #lang-toggle:checked ~ .interface-layer .dl-es { display: inline-flex !important; }
         #lang-toggle:checked ~ .interface-layer .lbl-es { display: inline-flex !important; }
 
-        /* Mobile Adjustments */
         @media (max-width: 900px) {
-            .document-wrapper { grid-template-columns: 1fr; }
-            .metadata-column { position: relative; top: 0; flex-direction: row; flex-wrap: wrap; gap: 32px; border-top: 1px solid var(--wf-border); padding-top: 32px; margin-top: 16px; }
+            .document-wrapper { grid-template-columns: 1fr; gap: 32px; }
+            .metadata-column { position: relative; top: 0; flex-direction: row; flex-wrap: wrap; border-top: 2px solid var(--wf-border); padding-top: 32px; }
             .reading-column { padding: 32px 24px; }
         }
     </style>
@@ -155,26 +161,26 @@
             </div>
             
             <div class="nav-actions">
-                <a href="https://github.com/woodfine" target="_blank" class="pill-btn">
+                <a href="https://github.com/woodfine" target="_blank" class="sys-btn">
                     <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
                     MANIFEST
                 </a>
 
-                <button onclick="window.print()" class="pill-btn">
+                <button onclick="window.print()" class="sys-btn">
                     <svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5C4 .67 4.67 0 5.5 0h5c.83 0 1.5.67 1.5 1.5V4h2.5c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5h-1.5v2.5c0 .83-.67 1.5-1.5 1.5h-6c-.83 0-1.5-.67-1.5-1.5V12H2.5C1.67 12 1 11.33 1 10.5v-5C1 4.67 1.67 4 2.5 4H4V1.5zM5.5 1.5v2.5h5V1.5h-5zm-3 4v5h1.5V8.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5v2h1.5v-5h-11zm3 8h5v-5h-5v5z"></path></svg>
                     PRINT
                 </button>
 
-                <a href="/woodfine_media_release_en.pdf" class="pill-btn dl-en" download>
+                <a href="/woodfine_media_release_en.pdf" class="sys-btn dl-en" download>
                     <svg viewBox="0 0 16 16" fill="currentColor"><path d="M2.75 14A1.75 1.75 0 011 12.25v-2.5a.75.75 0 011.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 00.25-.25v-2.5a.75.75 0 011.5 0v2.5A1.75 1.75 0 0113.25 14H2.75zM8 1.75v8.5l-2.72-2.72a.75.75 0 00-1.06 1.06l4 4a.75.75 0 001.06 0l4-4a.75.75 0 10-1.06-1.06L8.75 10.25v-8.5a.75.75 0 00-1.5 0z"></path></svg>
                     PDF
                 </a>
-                <a href="/woodfine_media_release_es.pdf" class="pill-btn dl-es" download>
+                <a href="/woodfine_media_release_es.pdf" class="sys-btn dl-es" download>
                     <svg viewBox="0 0 16 16" fill="currentColor"><path d="M2.75 14A1.75 1.75 0 011 12.25v-2.5a.75.75 0 011.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 00.25-.25v-2.5a.75.75 0 011.5 0v2.5A1.75 1.75 0 0113.25 14H2.75zM8 1.75v8.5l-2.72-2.72a.75.75 0 00-1.06 1.06l4 4a.75.75 0 001.06 0l4-4a.75.75 0 10-1.06-1.06L8.75 10.25v-8.5a.75.75 0 00-1.5 0z"></path></svg>
                     PDF
                 </a>
 
-                <label for="lang-toggle" class="pill-btn" style="border-color: var(--wf-accent); color: var(--wf-accent); background: rgba(22, 70, 121, 0.05);">
+                <label for="lang-toggle" class="sys-btn active-toggle">
                     <span class="lbl-en">ESPAÑOL</span>
                     <span class="lbl-es">ENGLISH</span>
                 </label>
@@ -183,10 +189,13 @@
     </header>
 
     <main class="document-wrapper">
-        
         <article class="reading-column" id="document-content">
+            
             <div class="lang-en">
-                <h1>Woodfine Capital Projects Introduces Direct-Hold Solutions for Regional Real Estate</h1>
+                <div class="release-header">
+                    <span class="release-flag">FOR IMMEDIATE RELEASE</span>
+                    <h1>Woodfine Capital Projects Introduces Direct-Hold Solutions for Regional Real Estate</h1>
+                </div>
                 <p><strong>VANCOUVER, BC &mdash; March 2, 2026 &mdash;</strong> WOODFINE MANAGEMENT CORP. ("Woodfine") has introduced Direct-Hold Solutions as the primary financial model for Woodfine Capital Projects Inc. (the "Promoter"). The Direct-Hold Solutions serve as the foundational operating entities for the procurement, development, and management of institutional-grade regional real estate.</p>
                 <p>The Direct-Hold Solutions are not investment funds. They are operating enterprises designed to give multi-generational capital direct ownership, long-term security, and independent custodial control over physical assets. At its core, this framework provides the foundation for capital efficiency, Flow-Through Taxation, and real estate syndication.</p>
                 
@@ -205,7 +214,10 @@
             </div>
             
             <div class="lang-es">
-                <h1>Woodfine Capital Projects Presenta Soluciones de Tenencia Directa para Bienes Inmuebles Regionales</h1>
+                <div class="release-header">
+                    <span class="release-flag">PARA PUBLICACIÓN INMEDIATA</span>
+                    <h1>Woodfine Capital Projects Presenta Soluciones de Tenencia Directa para Bienes Inmuebles Regionales</h1>
+                </div>
                 <p><strong>VANCOUVER, BC &mdash; 2 DE MARZO DE 2026 &mdash;</strong> WOODFINE MANAGEMENT CORP. ("Woodfine") ha introducido las Soluciones de Tenencia Directa como el modelo financiero principal para Woodfine Capital Projects Inc. (el "Promotor"). Las Soluciones de Tenencia Directa sirven como las entidades operativas fundamentales para la adquisición, desarrollo y gestión de bienes inmuebles regionales de grado institucional.</p>
                 <p>Las Soluciones de Tenencia Directa no son fondos de inversión. Son empresas operativas diseñadas para otorgar al capital multigeneracional propiedad directa, seguridad a largo plazo y control de custodia independiente sobre activos físicos. En su núcleo, este marco proporciona la base para la eficiencia del capital, la Tributación de Flujo Continuo (Flow-Through Taxation) y la sindicación inmobiliaria.</p>
                 
@@ -267,7 +279,8 @@
                 <span class="meta-label">SHA-256 Checksum</span>
                 <span id="live-hash" style="color: var(--wf-accent); word-break: break-all;">CALCULATING...</span>
             </div>
-            <div class="meta-block" style="border-left: none; margin-top: 16px;">
+            <div class="meta-block" style="border-left: 2px solid var(--wf-text);">
+                <span class="meta-label">Routing</span>
                 <span>DNS: DreamHost</span><br>
                 <span>Edge: GitHub Pages</span>
             </div>
