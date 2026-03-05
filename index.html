@@ -6,46 +6,59 @@
     <title>Woodfine Capital Projects - Media Release</title>
     <style>
         :root {
-            --wf-blue: #164679; --wf-grey-light: #F6F6F7; --wf-grey-dark: #7A7A7A; --wf-black: #000000;
+            --wf-accent: #164679; /* Woodfine Blue Base */
+            --wf-bg: #F6F6F7;     /* Woodfine Grey Shade 4 */
+            --wf-card: #FFFFFF;
+            --wf-text: #292929;   /* Woodfine Black Shade 1 */
+            --wf-muted: #7A7A7A;  /* Woodfine Black Shade 3 */
             --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             --font-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
         }
-        body { font-family: var(--font-sans); background-color: var(--wf-grey-light); color: var(--wf-black); line-height: 1.6; margin: 0; padding: 0; display: flex; justify-content: center; }
+        body { font-family: var(--font-sans); background-color: var(--wf-bg); color: var(--wf-text); line-height: 1.6; margin: 0; padding: 0; display: flex; justify-content: center; }
         
         /* ZERO-EXECUTION TOGGLE LOGIC */
         #lang-toggle { display: none; }
+        .lang-en, .btn-en, .hash-en { display: block; }
         .lang-es, .btn-es, .hash-es { display: none; }
-        #lang-toggle:checked ~ .site-wrapper .lang-en { display: none; }
-        #lang-toggle:checked ~ .site-wrapper .btn-en { display: none; }
+        #lang-toggle:checked ~ .site-wrapper .lang-en,
+        #lang-toggle:checked ~ .site-wrapper .btn-en,
         #lang-toggle:checked ~ .site-wrapper .hash-en { display: none; }
-        #lang-toggle:checked ~ .site-wrapper .lang-es { display: block; }
-        #lang-toggle:checked ~ .site-wrapper .btn-es { display: inline; }
+        #lang-toggle:checked ~ .site-wrapper .lang-es,
         #lang-toggle:checked ~ .site-wrapper .hash-es { display: block; }
+        #lang-toggle:checked ~ .site-wrapper .btn-es { display: inline-block; }
 
         .site-wrapper { max-width: 800px; width: 100%; margin: 40px 20px; }
-        .top-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--wf-grey-dark); }
-        .top-nav-links { display: flex; align-items: center; gap: 15px; }
-        .top-nav a { color: var(--wf-black); text-decoration: none; display: flex; align-items: center; gap: 8px; font-weight: 600; }
-        .top-nav a:hover { color: var(--wf-blue); }
-        .lang-toggle-btn { background: transparent; border: 1px solid currentColor; color: var(--wf-black); padding: 4px 8px; font-family: var(--font-mono); font-size: 0.75rem; cursor: pointer; border-radius: 3px; font-weight: 600; user-select: none; }
-        .lang-toggle-btn:hover { background: var(--wf-black); color: var(--wf-grey-light); }
-        .container { background: #ffffff; padding: 50px 60px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 6px solid var(--wf-blue); }
-        h1, h2, h3 { color: var(--wf-blue); font-weight: 600; }
-        h1 { font-size: 1.8rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
-        .subtitle { font-size: 1.2rem; font-weight: 500; margin-top: 0; margin-bottom: 20px; color: var(--wf-black); }
-        .dateline { font-family: var(--font-mono); font-size: 0.85rem; color: var(--wf-grey-dark); margin-bottom: 30px; border-bottom: 1px solid #eaeaea; padding-bottom: 15px; }
+        .top-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--wf-muted); }
+        .top-nav-links { display: flex; align-items: center; gap: 16px; }
+        .top-nav a { color: var(--wf-text); text-decoration: none; display: flex; align-items: center; gap: 8px; font-weight: 600; transition: color 0.2s; }
+        .top-nav a:hover { color: var(--wf-accent); }
+        
+        .lang-toggle-btn { 
+            display: inline-flex; align-items: center; justify-content: center;
+            height: 28px; padding: 0 12px; font-family: var(--font-mono); font-size: 0.7rem; 
+            font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; 
+            border: 1px solid var(--wf-muted); border-radius: 14px; 
+            color: var(--wf-text); cursor: pointer; user-select: none; transition: all 0.2s ease; line-height: 1;
+        }
+        .lang-toggle-btn:hover { border-color: var(--wf-accent); color: var(--wf-accent); background: rgba(22, 70, 121, 0.05); }
+        
+        .container { background: var(--wf-card); padding: 56px 64px; box-shadow: 0 4px 24px rgba(0,0,0,0.04); border-top: 3px solid var(--wf-accent); border-radius: 4px; }
+        h1, h2, h3 { color: var(--wf-accent); font-weight: 600; }
+        h1 { font-size: 1.8rem; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.02em; }
+        .subtitle { font-size: 1.2rem; font-weight: 500; margin-top: 0; margin-bottom: 24px; color: var(--wf-text); }
+        .dateline { font-family: var(--font-mono); font-size: 0.85rem; color: var(--wf-muted); margin-bottom: 32px; border-bottom: 1px solid #EAEBEC; padding-bottom: 16px; }
         p { margin-bottom: 20px; text-align: justify; }
-        .legal-block { margin-top: 50px; padding-top: 20px; border-top: 2px solid #eaeaea; font-size: 0.85rem; color: var(--wf-grey-dark); text-align: left; }
-        .legal-block h3 { font-size: 1rem; color: var(--wf-grey-dark); margin-bottom: 10px; }
-        .crypto-footer { margin-top: 20px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--wf-grey-dark); text-align: center; line-height: 1.8; }
-        .crypto-footer span { display: block; }
-        .hash-string { color: var(--wf-black); }
-        @media (max-width: 600px) { .container { padding: 30px 20px; } h1 { font-size: 1.5rem; } }
+        .legal-block { margin-top: 56px; padding-top: 24px; border-top: 1px solid #EAEBEC; font-size: 0.85rem; color: var(--wf-muted); text-align: left; }
+        .legal-block h3 { font-size: 1rem; color: var(--wf-muted); margin-bottom: 12px; }
+        
+        .crypto-footer { margin-top: 24px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--wf-muted); text-align: center; line-height: 2; }
+        .hash-string { background: rgba(0,0,0,0.04); padding: 2px 6px; border-radius: 3px; color: var(--wf-text); }
+        
+        @media (max-width: 600px) { .container { padding: 32px 24px; } h1 { font-size: 1.5rem; } .top-nav { flex-direction: column; align-items: flex-start; gap: 16px; } }
     </style>
 </head>
 <body>
 <input type="checkbox" id="lang-toggle">
-
 <div class="site-wrapper">
     <div class="top-nav">
         <span>Corporate Disclosure</span>
@@ -62,8 +75,7 @@
             </label>
         </div>
     </div>
-    <div class="container" id="sovereign-payload">
-        
+    <div class="container">
         <div class="lang-en">
             <h1>WOODFINE CAPITAL PROJECTS</h1>
             <h2 class="subtitle">Media Release</h2>
@@ -116,10 +128,11 @@
             </div>
         </div>
     </div>
+    
     <div class="crypto-footer">
-        <span>INFRASTRUCTURE ROUTING: DNS via DreamHost | Static Hosting via GitHub Pages</span>
-        <span class="hash-en">PRE-COMPUTED SHA-256 (EN): <span class="hash-string">a3f9c2d7b4e185a6f20b9c3e174b5d8f9a2c4e6d7b8a1f3c5e9d2b4a6f8c0e1</span> | COMPILER: service-content</span>
-        <span class="hash-es">PRE-COMPUTED SHA-256 (ES): <span class="hash-string">c7b4e185a6f20b9c3e174b5d8f9a2c4e6d7b8a1f3c5e9d2b4a6f8c0e1a3f9c2d</span> | COMPILER: service-content</span>
+        <div>INFRASTRUCTURE ROUTING: DNS via DreamHost | Static Hosting via GitHub Pages</div>
+        <div class="hash-en">PRE-COMPUTED SHA-256 (EN): <span class="hash-string">a3f9c2d7b4e185a6f20b9c3e174b5d8f9a2c4e6d7b8a1f3c5e9d2b4a6f8c0e1</span> | COMPILER: service-content</div>
+        <div class="hash-es">PRE-COMPUTED SHA-256 (ES): <span class="hash-string">c7b4e185a6f20b9c3e174b5d8f9a2c4e6d7b8a1f3c5e9d2b4a6f8c0e1a3f9c2d</span> | COMPILER: service-content</div>
     </div>
 </div>
 </body>
