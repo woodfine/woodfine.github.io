@@ -2,151 +2,120 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="color-scheme" content="light">
-    <meta name="theme-color" content="#F7F9FA">
-    
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data:; connect-src 'self';">
-    
-    <link rel="canonical" href="https://woodfine.co/">
-    <link rel="alternate" hreflang="en" href="https://woodfine.co/">
-    <link rel="alternate" hreflang="es" href="https://woodfine.co/es/">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    
-    <meta property="og:title" content="Woodfine Capital Projects™ - Direct-Hold Solutions">
-    <meta property="og:description" content="Procurement, development, and management of institutional-grade regional real estate bypassing legacy private equity structures.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://woodfine.co/">
-    <meta property="og:image" content="https://woodfine.co/og-image-highres.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Woodfine Capital Projects™ - Direct-Hold Solutions">
-    <meta name="twitter:description" content="Procurement, development, and management of institutional-grade regional real estate bypassing legacy private equity structures.">
-    <meta name="twitter:image" content="https://woodfine.co/og-image-highres.png">
-    
-    <title>Woodfine Capital Projects™ - Direct-Hold Solutions</title>
-    
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23164679%22 rx=%2210%22/></svg>">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "Woodfine Capital Projects Introduces Direct-Hold Solutions",
-      "datePublished": "2026-03-02T08:00:00-08:00",
-      "author": {
-        "@type": "Organization",
-        "name": "Woodfine Management Corp.",
-        "url": "https://www.woodfine.co"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Woodfine Capital Projects Inc."
-      }
-    }
-    </script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light"> 
+    <title>Woodfine Management Corp. - Direct-Hold Solutions</title>
     <style>
-        /* 1. RESET & INSTITUTIONAL BRUTALISM */
+        /* 1. RESET & 8-PIXEL BASELINE GRID (Woodfine Brutalism - DS-ADR-08) */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         :root {
-            --wf-bg: #F7F9FA; /* Surgical Off-White */
+            --wf-bg: #F7F9FA;
             --wf-card: #FFFFFF;
-            --wf-text: #111827; /* Deep Slate */
+            --wf-text: #111827;
             --wf-muted: #6B7280;
             --wf-border: #111827;
-            --wf-accent: #164679; /* Woodfine Blue Base */
+            --wf-accent: #164679;
             --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             --font-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
         }
         body {
-            font-family: var(--font-sans); background-color: var(--wf-bg); color: var(--wf-text);
-            line-height: 1.6; min-height: 100dvh;
-            -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+            font-family: var(--font-sans);
+            background-color: var(--wf-bg);
+            color: var(--wf-text);
+            line-height: 1.6; 
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* 2. FROSTED GLASS HEADER (Notch Integration) */
+        /* 2. INSTITUTIONAL NAVIGATION BAR (Responsive Flex-Wrap Matrix) */
         .top-bar {
-            position: sticky; top: 0; width: 100%;
-            background: rgba(247, 249, 250, 0.85);
-            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: var(--wf-card);
             border-bottom: 2px solid var(--wf-border);
-            z-index: 100; display: flex; justify-content: center; padding: 16px 24px;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            padding: 16px 24px;
         }
         .nav-content {
-            width: 100%; max-width: 1024px; display: flex; flex-wrap: wrap;
-            justify-content: space-between; align-items: center; gap: 16px;
+            width: 100%;
+            max-width: 1024px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
         }
-        .brand-logo { font-size: 1.125rem; font-weight: 800; letter-spacing: -0.02em; color: var(--wf-text); }
+        .brand-logo {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--wf-text);
+        }
 
-        /* 3. TACTILE TOUCH TARGETS (44px WCAG 2.2 / Pill Radius) */
-        .nav-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+        /* 3. INSTITUTIONAL TOUCH TARGETS (44px WCAG 2.2 Compliance) */
+        .nav-actions { 
+            display: flex; 
+            flex-wrap: wrap;
+            gap: 8px; 
+            align-items: center; 
+        }
         .sys-btn {
             display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-            height: 44px; padding: 0 16px; border: 2px solid var(--wf-border); border-radius: 9999px;
+            height: 44px; padding: 0 16px;
+            border: 2px solid var(--wf-border); border-radius: 9999px;
             font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
             color: var(--wf-text); background: var(--wf-card); cursor: pointer; text-decoration: none;
-            transition: transform 0.1s ease, background 0.2s ease;
+            transition: all 0.1s ease;
         }
-        .sys-btn:hover { background: #EAEAEA; transform: translateY(1px); }
-        .sys-btn.active-toggle { background: var(--wf-accent); color: var(--wf-card); border-color: var(--wf-accent); }
+        .sys-btn:hover { background: rgba(17, 24, 39, 0.05); }
+        .sys-btn.active-toggle { background: var(--wf-text); color: var(--wf-card); }
 
-        /* 4. THE TACTILE EDITORIAL CANVAS & HAIRLINE GRID */
+        /* 4. THE CANVAS */
         .document-wrapper {
-            width: 100%; max-width: 1024px; margin: 48px auto 96px; padding: 0 24px;
-            display: grid; grid-template-columns: 1fr 280px; gap: 64px; align-items: start;
+            width: 100%;
+            max-width: 1024px;
+            margin: 48px auto 96px;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            gap: 64px;
+            align-items: start;
         }
-        .reading-column { 
-            padding: 48px; background: var(--wf-card); border: 2px solid var(--wf-border); 
-            border-radius: 8px; box-shadow: 6px 6px 0px var(--wf-border); 
-        }
+        .reading-column { padding: 48px; background: var(--wf-card); border: 2px solid var(--wf-border); border-radius: 8px; }
         .metadata-column {
-            position: sticky; top: 104px; font-family: var(--font-mono); font-size: 0.75rem; 
-            color: var(--wf-text); display: flex; flex-direction: column; line-height: 1.5;
+            position: sticky; top: 104px;
+            font-family: var(--font-mono); font-size: 0.75rem; color: var(--wf-text);
+            display: flex; flex-direction: column; gap: 32px; line-height: 1.5;
         }
-        .meta-block { border-top: 1px solid var(--wf-border); padding: 16px 0; }
-        .meta-block:last-child { border-bottom: 1px solid var(--wf-border); }
+        .meta-block { border-left: 2px solid var(--wf-border); padding-left: 16px; }
         .meta-label { text-transform: uppercase; font-weight: 700; color: var(--wf-muted); margin-bottom: 8px; display: block; }
-        
-        /* 5. THE TRUST BADGE */
-        .trust-badge {
-            display: inline-block; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700;
-            background: var(--wf-text); color: var(--wf-card); padding: 8px 12px; border-radius: 9999px; 
-            letter-spacing: 0.05em; margin-bottom: 24px; text-align: center;
-        }
 
-        /* 6. TYPOGRAPHY & NEURODIVERSITY (DS-ADR-07 & Swiss Grid) */
+        /* 5. TYPOGRAPHY & NEURODIVERSITY (DS-ADR-07) */
         .release-header { margin-bottom: 40px; border-bottom: 2px solid var(--wf-border); padding-bottom: 24px; }
-        .release-flag { font-family: var(--font-mono); font-weight: 700; font-size: 0.875rem; letter-spacing: 0.05em; margin-bottom: 16px; display: block; color: var(--wf-muted); }
-        h1 { font-size: clamp(2rem, 5vw, 2.75rem); color: var(--wf-text); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 24px; font-weight: 800; text-wrap: pretty; }
-        h3 { font-size: 1.25rem; color: var(--wf-text); font-weight: 800; margin-top: 48px; margin-bottom: 16px; text-wrap: pretty; }
-        p { font-size: 1rem; color: #374151; margin-bottom: 24px; max-width: 65ch; text-wrap: pretty; } 
+        .release-flag { font-family: var(--font-mono); font-weight: 700; font-size: 0.875rem; letter-spacing: 0.05em; margin-bottom: 16px; display: block; color: var(--wf-accent); }
+        h1 { font-size: clamp(2rem, 5vw, 2.75rem); color: var(--wf-text); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 24px; font-weight: 800; }
+        h3 { font-size: 1.25rem; color: var(--wf-text); font-weight: 800; margin-top: 48px; margin-bottom: 16px; }
+        p { font-size: 1rem; color: #374151; margin-bottom: 24px; max-width: 65ch; } 
         strong { color: var(--wf-text); font-weight: 700; }
 
-        /* 7. LEGAL BLOCK */
+        /* 6. LEGAL BLOCK */
         .legal-block { margin-top: 64px; padding-top: 40px; border-top: 2px solid var(--wf-border); }
         .legal-block h3 { margin-top: 32px; margin-bottom: 16px; font-size: 1rem; }
         .legal-block p { font-size: 0.875rem; color: var(--wf-muted); }
-        .digital-disclaimer { margin-top: 48px; }
 
-        /* 8. OFL PRINT ENGINE (MEMO-04) */
+        /* 7. PRINT ENGINE */
         @media print {
-            @font-face { font-family: 'Zilla Slab'; src: url('../fonts/ZillaSlab-Bold.ttf') format('truetype'); font-weight: 700; }
-            @font-face { font-family: 'Nunito Sans'; src: url('../fonts/NunitoSans-Regular.ttf') format('truetype'); font-weight: 400; }
-            @font-face { font-family: 'Barlow Condensed'; src: url('../fonts/BarlowCondensed-Bold.ttf') format('truetype'); font-weight: 700; }
-            
             @page { margin: 1in; }
-            body { background: #fff; color: #000; font-family: 'Nunito Sans', sans-serif; }
-            h1, h3 { font-family: 'Zilla Slab', serif; }
-            .meta-label { font-family: 'Barlow Condensed', sans-serif; }
-            p { orphans: 3; widows: 3; }
-            .meta-block, .legal-block h3, .legal-block p { page-break-inside: avoid; }
-            
-            .top-bar, .metadata-column, .sys-btn, input, label, .trust-badge, .digital-disclaimer { display: none !important; }
+            body { background: #fff; color: #000; }
+            .top-bar, .metadata-column, .sys-btn, input, label { display: none !important; }
             .document-wrapper { display: block; margin: 0; padding: 0; max-width: 100%; }
-            .reading-column { border: none; box-shadow: none; padding: 0; }
+            .reading-column { border: none; padding: 0; }
         }
 
-        /* 9. ZERO-EXECUTION STATE MACHINE */
+        /* 8. ZERO-EXECUTION STATE MACHINE */
         #lang-toggle { display: none; }
         .lang-es, .dl-es, .lbl-es { display: none !important; }
         #lang-toggle:checked ~ .interface-layer .lang-en,
@@ -156,11 +125,11 @@
         #lang-toggle:checked ~ .interface-layer .dl-es,
         #lang-toggle:checked ~ .interface-layer .lbl-es { display: inline-flex !important; }
 
-        /* 10. MOBILE DVH MATRIX */
+        /* 9. MOBILE OPTIMIZATION MATRIX */
         @media (max-width: 900px) {
             .document-wrapper { grid-template-columns: 1fr; gap: 32px; padding: 0 16px; }
             .reading-column { padding: 32px 24px; }
-            .metadata-column { position: relative; top: 0; padding-top: 32px; }
+            .metadata-column { position: relative; top: 0; flex-direction: row; flex-wrap: wrap; border-top: 2px solid var(--wf-border); padding-top: 32px; }
         }
         @media (max-width: 600px) {
             .top-bar { padding: 12px 16px; }
@@ -179,9 +148,7 @@
 <div class="interface-layer">
     <header class="top-bar">
         <div class="nav-content">
-            <div class="brand-logo" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-                <span itemprop="name">Woodfine Capital Projects™</span>
-            </div>
+            <div class="brand-logo">Woodfine Management Corp.</div>
             <div class="nav-actions">
                 <label for="lang-toggle" id="lang-toggle-label" class="sys-btn active-toggle">
                     <span class="lbl-en">ESPAÑOL</span>
@@ -192,19 +159,19 @@
                     MANIFEST
                 </a>
                 <button onclick="window.print()" class="sys-btn">PRINT</button>
-                <a href="/woodfine_news_release_en.pdf" class="sys-btn dl-en" download>PDF</a>
-                <a href="/woodfine_news_release_es.pdf" class="sys-btn dl-es" download>PDF</a>
+                <a href="/woodfine_media_release_en.pdf" class="sys-btn dl-en" download>PDF</a>
+                <a href="/woodfine_media_release_es.pdf" class="sys-btn dl-es" download>PDF</a>
             </div>
         </div>
     </header>
 
-    <main class="document-wrapper" itemscope itemtype="https://schema.org/Article">
-        <article class="reading-column" id="document-content" role="main">
+    <main class="document-wrapper">
+        <article class="reading-column" id="document-content">
             
-            <div class="lang-en" lang="en">
+            <div class="lang-en">
                 <div class="release-header">
                     <span class="release-flag">FOR IMMEDIATE RELEASE</span>
-                    <h1 itemprop="headline">Woodfine Capital Projects Introduces Direct-Hold Solutions for Regional Real Estate</h1>
+                    <h1>Woodfine Capital Projects Introduces Direct-Hold Solutions for Regional Real Estate</h1>
                 </div>
                 <p><strong>Vancouver, British Columbia – March 2, 2026 –</strong> Woodfine Management Corp. ("Woodfine") has introduced Direct-Hold Solutions as the primary financial model for Woodfine Capital Projects Inc. (the "Promoter").</p>
                 <p>The Direct-Hold Solutions serve as the foundational operating entities for the procurement, development, and management of institutional-grade regional real estate. The Direct-Hold Solutions are not investment funds. They are operating enterprises designed to give multi-generational capital direct ownership, long-term security, and independent custodial control over physical assets.</p>
@@ -223,10 +190,10 @@
                 <p>This structure is designed to guarantee direct control and capital preservation. This release serves as a public disclosure establishing the Direct-Hold Solutions framework. The economic model avoids variable performance fees at the enterprise level. Woodfine takes its compensation entirely as Retained Equity—a 10% ownership stake. This preserves the capital structure entirely for the asset, eliminating redundant fees and providing a highly efficient base for independent syndication.</p>
             </div>
             
-            <div class="lang-es" lang="es">
+            <div class="lang-es">
                 <div class="release-header">
                     <span class="release-flag">PARA PUBLICACIÓN INMEDIATA</span>
-                    <h1 itemprop="headline">Woodfine Capital Projects Presenta Direct-Hold Solutions para Bienes Inmuebles Regionales</h1>
+                    <h1>Woodfine Capital Projects Presenta Direct-Hold Solutions para Bienes Inmuebles Regionales</h1>
                 </div>
                 <p><strong>Vancouver, Columbia Británica – 2 de Marzo de 2026 –</strong> Woodfine Management Corp. ("Woodfine") ha introducido las Direct-Hold Solutions como el modelo financiero principal para Woodfine Capital Projects Inc. (el "Promotor").</p>
                 <p>Las Direct-Hold Solutions sirven como las entidades operativas fundamentales para la adquisición, desarrollo y gestión de bienes inmuebles regionales de grado institucional. Las Direct-Hold Solutions no son fondos de inversión. Son empresas operativas diseñadas para otorgar al capital multigeneracional propiedad directa, seguridad a largo plazo y control de custodia independiente sobre activos físicos.</p>
@@ -245,62 +212,53 @@
                 <p>El modelo económico evita tarifas de rendimiento variables a nivel empresarial. Woodfine toma su compensación completamente como Capital Retenido: una participación del 10%. Esto preserva la estructura de capital completamente para el activo, eliminando tarifas redundantes y proporcionando una base altamente eficiente para la sindicación independiente.</p>
             </div>
 
-            <div class="legal-block" role="contentinfo">
-                <div class="lang-en" lang="en">
+            <div class="legal-block">
+                <div class="lang-en">
+                    <h3>Digital Infrastructure & Privacy Posture</h3>
+                    <p>This interface operates on a Zero-Execution and Zero-State Telemetry architecture. It does not deploy tracking cookies, retain session states, or harvest Personally Identifiable Information (PII). System interactions are limited to the collection of anonymized, masked network routing data strictly for the purpose of auditing infrastructure security and verifying document access.</p>
+
                     <h3>Multi-Jurisdictional Securities Laws</h3>
                     <p>Shares in the Promoter, Investment Units in the Direct-Hold Solutions, and any related financial instruments have not been, and will not be, registered under the United States Securities Act of 1933, as amended, nor under the securities laws of Canada, the Ley del Mercado de Valores of Mexico, or the Ley de los Mercados de Valores of Spain, and they may not be offered or sold in these jurisdictions absent registration or an applicable exemption from registration requirements. This release does not constitute an offer to sell or the solicitation of an offer to buy. There will be no sale of shares or Investment Units in any province, state, or jurisdiction in which such offer, solicitation, or sale would be unlawful prior to registration or qualification under applicable securities laws and regulations.</p>
                     
                     <h3>Continuous Disclosure and Forward-Looking Statements</h3>
                     <p>This release contains forward-looking information within the meaning of applicable international securities legislation, including National Instrument 51-102 Continuous Disclosure Obligations in Canada, and equivalent regulatory frameworks governing real estate investment vehicles and Direct-Hold Solutions globally. Actual results, performance, and plans can differ materially from those anticipated due to a number of material risk factors, including but not limited to, changes in real estate market conditions, variations in regulatory requirements, unexpected operational challenges, and shifts in capital availability. The Promoter, Woodfine, the Direct-Hold Solutions, and management disclaim any intention or obligation to revise any forward-looking statements, whether as a result of new information, future events, or otherwise, except as required pursuant to applicable securities legislation.</p>
-                    
-                    <div class="digital-disclaimer">
-                        <h3>Digital Infrastructure & Privacy Posture</h3>
-                        <p>This interface operates on a Zero-Execution and Zero-State Telemetry architecture. It does not deploy tracking cookies, retain session states, or harvest Personally Identifiable Information (PII). System interactions are limited to the collection of anonymized, masked network routing data strictly for the purpose of auditing infrastructure security and verifying document access.</p>
-                    </div>
                 </div>
-                <div class="lang-es" lang="es">
+                <div class="lang-es">
+                    <h3>Infraestructura Digital y Postura de Privacidad</h3>
+                    <p>Esta interfaz opera sobre una arquitectura de Ejecución Cero y Telemetría de Estado Cero. No implementa cookies de seguimiento, no retiene estados de sesión ni recopila Información de Identificación Personal (PII). Las interacciones del sistema se limitan a la recopilación de datos de enrutamiento de red anonimizados y enmascarados, estrictamente con el propósito de auditar la seguridad de la infraestructura y verificar el acceso a los documentos.</p>
+
                     <h3>Leyes de Valores Multijurisdiccionales</h3>
                     <p>Las acciones del Promotor, las Unidades de Inversión en las Direct-Hold Solutions y cualquier instrumento financiero relacionado no han sido, ni serán, registrados bajo la Ley de Valores de los Estados Unidos de 1933, ni bajo las leyes de valores de Canadá, la Ley del Mercado de Valores de México, o la Ley de los Mercados de Valores de España. No pueden ser ofrecidos ni vendidos en estas jurisdicciones sin registro o una exención aplicable. Este comunicado no constituye una oferta de venta ni la solicitud de una oferta de compra.</p>
                     
                     <h3>Divulgación Continua y Declaraciones Prospectivas</h3>
                     <p>Este comunicado contiene información prospectiva dentro del significado de la legislación internacional de valores aplicable. Los resultados, el rendimiento y los planes reales pueden diferir materialmente de los previstos debido a una serie de factores de riesgo materiales, que incluyen, entre otros, cambios en las condiciones del mercado inmobiliario, variaciones en los requisitos regulatorios, desafíos operativos inesperados y cambios en la disponibilidad de capital. El Promotor, Woodfine, las Direct-Hold Solutions y la gerencia renuncian a cualquier intención u obligación de revisar cualquier declaración prospectiva, ya sea como resultado de nueva información, eventos futuros u otros, excepto según lo exija la legislación de valores aplicable.</p>
-
-                    <div class="digital-disclaimer">
-                        <h3>Infraestructura Digital y Postura de Privacidad</h3>
-                        <p>Esta interfaz opera sobre una arquitectura de Ejecución Cero y Telemetría de Estado Cero. No implementa cookies de seguimiento, no retiene estados de sesión ni recopila Información de Identificación Personal (PII). Las interacciones del sistema se limitan a la recopilación de datos de enrutamiento de red anonimizados y enmascarados, estrictamente con el propósito de auditar la seguridad de la infraestructura y verificar el acceso a los documentos.</p>
-                    </div>
                 </div>
             </div>
         </article>
 
         <aside class="metadata-column">
-            
-            <div class="trust-badge" title="Zero tracking cookies deployed on this infrastructure.">
-                [ ∅ ZERO COOKIES INJECTED ]
-            </div>
-
             <div class="meta-block">
                 <span class="meta-label">Category</span>
-                <span>News Release</span>
+                <span>Financial Disclosure</span>
             </div>
             <div class="meta-block">
                 <span class="meta-label">Date Issued</span>
-                <time itemprop="datePublished" datetime="2026-03-02">March 2, 2026</time>
+                <span>March 2, 2026</span>
             </div>
             <div class="meta-block">
                 <span class="meta-label">Contact</span>
-                <span itemscope itemtype="https://schema.org/Person">
-                    <span itemprop="name">Peter M. Woodfine</span><br>
-                    <span itemprop="jobTitle">Chief Executive Officer</span><br><br>
-                    <span itemprop="worksFor">Woodfine Management Corp.</span><br>
+                <span>
+                    Peter M. Woodfine<br>
+                    Executive Officer<br>
+                    Woodfine Management Corp.<br>
                     595 Burrard Street, Lower Concourse<br>
                     PO BOX 48295 Bentall<br>
-                    Vancouver, BC V7X 1A1<br><br>
-                    <a itemprop="email" href="mailto:peter@woodfine.co" style="color: var(--wf-accent); text-decoration: none;">peter@woodfine.co</a>
-                    <div style="display: flex; align-items: center; gap: 12px; margin-top: 8px; margin-bottom: 8px;">
-                        <span itemprop="telephone" style="font-family: var(--font-mono); font-size: 0.875rem;">+1 604-375-1196</span>
-                        <a href="https://wa.me/16043751196" target="_blank" style="color: #25D366; display: flex;" aria-label="WhatsApp Chat">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="currentColor">
+                    Vancouver, BC V7X 1A1<br>
+                    <a href="mailto:peter@woodfine.co" style="color: var(--wf-accent); text-decoration: none;">peter@woodfine.co</a>
+                    <div style="display: flex; align-items: center; gap: 8px; margin-top: 4px; margin-bottom: 4px;">
+                        <span style="font-family: var(--font-mono); font-size: 0.75rem;">+1 (604) 555-0100</span>
+                        <a href="https://wa.me/16045550100" target="_blank" style="color: #25D366; display: flex;" aria-label="WhatsApp Chat">
+                            <svg style="width:16px;height:16px" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                             </svg>
                         </a>
@@ -310,12 +268,12 @@
             </div>
             <div class="meta-block">
                 <span class="meta-label">SHA-256 Checksum</span>
-                <span id="live-hash" style="color: var(--wf-accent); font-weight: 700; word-break: break-all;">CALCULATING...</span>
+                <span id="live-hash" style="color: var(--wf-text); word-break: break-all;">CALCULATING...</span>
             </div>
-            <div class="meta-block">
+            <div class="meta-block" style="border-left: 2px solid var(--wf-border);">
                 <span class="meta-label">Routing</span>
                 <span>DNS: DreamHost</span><br>
-                <span>Hosting: GitHub Pages</span>
+                <span>Edge: GitHub Pages</span>
             </div>
         </aside>
     </main>
@@ -336,24 +294,16 @@
         const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
         document.getElementById('live-hash').innerText = hashHex;
     }
+
     document.getElementById('lang-toggle').addEventListener('change', updateHash);
     window.addEventListener('DOMContentLoaded', updateHash);
 
-    // 2030 Leapfrog Telemetry Matrix (Zero-Cookie Environmental Extraction)
+    // DS-ADR-06 Telemetry Hook
     if (navigator.sendBeacon) {
-        window.addEventListener("pagehide", function() {
-            const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100) || 0;
+        window.addEventListener("unload", function() {
             navigator.sendBeacon("/telemetry-endpoint", JSON.stringify({
                 uri: window.location.pathname,
-                timestamp: Date.now(),
-                ua: navigator.userAgent,
-                viewport: window.innerWidth + "x" + window.innerHeight,
-                lang: navigator.language,
-                tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
-                conn: navigator.connection ? navigator.connection.effectiveType : 'unknown',
-                cores: navigator.hardwareConcurrency || 'unknown',
-                ref: document.referrer,
-                scroll: scrollDepth + "%"
+                timestamp: Date.now()
             }));
         });
     }
