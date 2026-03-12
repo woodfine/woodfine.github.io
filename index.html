@@ -179,24 +179,21 @@
     document.getElementById('toggle').addEventListener('change',up);
     window.addEventListener('DOMContentLoaded',up);
 
-    function sendTelemetry() {
-        if (!navigator.sendBeacon) return;
-        const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100) || 0;
-        navigator.sendBeacon("/telemetry-endpoint", JSON.stringify({
-            uri: window.location.pathname,
-            timestamp: Date.now(),
-            ua: navigator.userAgent,
-            viewport: window.innerWidth + "x" + window.innerHeight,
-            lang: navigator.language,
-            tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
-            scroll: scrollDepth + "%"
-        }));
-    }
-    
-    window.addEventListener("pagehide", sendTelemetry);
-    document.addEventListener("visibilitychange", function() {
-        if (document.visibilityState === 'hidden') sendTelemetry();
-    });
+// [DS-ADR-06] Sovereign Telemetry Engine
+    (function() {
+        const payload = {
+            uri: window.location.href,
+            timestamp: new Date().toISOString(),
+            user_agent: navigator.userAgent
+        };
+
+        fetch("https://telemetry.woodfinegroup.com:8082/telemetry-endpoint", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+            mode: "cors"
+        }).catch(err => console.error("Telemetry Diode Offline"));
+    })();
 </script>
 </body>
 </html>
