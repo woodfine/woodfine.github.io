@@ -179,20 +179,52 @@
     document.getElementById('toggle').addEventListener('change',up);
     window.addEventListener('DOMContentLoaded',up);
 
-// [DS-ADR-06] Sovereign Telemetry Engine
+    // [DS-ADR-06] Sovereign Telemetry Engine (V3 Intent Beacon)
     (function() {
-        const payload = {
-            uri: window.location.href,
-            timestamp: new Date().toISOString(),
-            user_agent: navigator.userAgent
-        };
+        let maxScroll = 0;
+        let clickTargets = [];
+        let textCopied = false;
+        const startTime = Date.now();
+        
+        window.addEventListener('scroll', () => {
+            const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+            if (scrollPercent > maxScroll) maxScroll = scrollPercent;
+        }, { passive: true });
 
-        fetch("https://telemetry.woodfinegroup.com:8082/telemetry-endpoint", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
-            mode: "cors"
-        }).catch(err => console.error("Telemetry Diode Offline"));
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest('a, button');
+            if (target) {
+                const label = target.innerText.trim().substring(0, 20) || target.href || 'btn_action';
+                clickTargets.push(label);
+            }
+        }, { passive: true });
+
+        document.addEventListener('copy', () => { textCopied = true; }, { passive: true });
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'hidden') {
+                const dwellSeconds = Math.round((Date.now() - startTime) / 1000);
+                const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+                
+                const payload = {
+                    uri: window.location.href,
+                    timestamp: new Date().toISOString(),
+                    user_agent: navigator.userAgent,
+                    referrer: document.referrer || "direct",
+                    viewport: window.innerWidth + "x" + window.innerHeight,
+                    dwell_time: dwellSeconds,
+                    scroll_depth: maxScroll,
+                    intent_clicks: clickTargets.length > 0 ? clickTargets.join(' | ') : "none",
+                    intent_copied: textCopied,
+                    lang_browser: navigator.language || "unknown",
+                    lang_toggled: document.getElementById('toggle') && document.getElementById('toggle').checked ? "ES" : "EN",
+                    network: conn ? conn.effectiveType : "unknown"
+                };
+                
+                const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+                navigator.sendBeacon("https://telemetry.woodfinegroup.com:8082/telemetry-endpoint", blob);
+            }
+        });
     })();
 </script>
 </body>
