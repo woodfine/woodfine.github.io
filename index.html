@@ -57,7 +57,8 @@
         body { font-family: var(--font-sans); background: var(--wf-canvas); color: var(--wf-text); line-height: 1.5; overflow-x: hidden; }
         
         /* LAYOUT ARCHITECTURE */
-        .header-bar { position: sticky; top: 0; background: var(--wf-card); border-bottom: 1px solid var(--wf-hairline); padding: max(16px, env(safe-area-inset-top)) 24px 16px 24px; z-index: 100; will-change: transform; transform: translateZ(0); }
+        /* Canvas unified, structural hairline reinstated for anchoring */
+        .header-bar { position: sticky; top: 0; background: var(--wf-canvas); border-bottom: 1px solid var(--wf-hairline); padding: max(16px, env(safe-area-inset-top)) 24px 16px 24px; z-index: 100; will-change: transform; transform: translateZ(0); }
         .nav-container { width: 100%; max-width: 1024px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
         .wordmark { font-weight: 800; font-size: 1.125rem; letter-spacing: -0.03em; text-transform: uppercase; white-space: nowrap; }
         .desktop-actions { display: flex; gap: 8px; align-items: center; }
@@ -65,7 +66,7 @@
         .main-grid { width: 100%; max-width: 1024px; margin: 48px auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 300px; gap: 64px; align-items: start; }
         
         /* CONTENT STYLING (OPEN MANUSCRIPT) */
-        .document-canvas { background: transparent; padding: 0; border: none; }
+        .document-canvas { background: transparent; padding: 0; border: none; min-width: 0; }
         .release-flag { color: var(--wf-accent); font-weight: 700; font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 16px; display: block; }
         h1 { font-size: clamp(2rem, 4vw, 2.5rem); line-height: 1.1; margin-bottom: 32px; letter-spacing: -0.02em; font-weight: 800; }
         h3 { font-size: 1.25rem; margin: 32px 0 16px 0; letter-spacing: -0.01em; font-weight: 700; }
@@ -79,20 +80,21 @@
         .legal-ledger p { font-size: 0.75rem; margin-bottom: 16px; max-width: 100%; }
 
         /* SIDEBAR LEDGER */
-        .sidebar-ledger { position: sticky; top: max(100px, calc(env(safe-area-inset-top) + 80px)); display: flex; flex-direction: column; gap: 24px; font-family: var(--font-mono); font-size: 0.875rem; will-change: transform; transform: translateZ(0); }
+        .sidebar-ledger { position: sticky; top: max(100px, calc(env(safe-area-inset-top) + 80px)); display: flex; flex-direction: column; gap: 24px; font-family: var(--font-mono); font-size: 0.875rem; will-change: transform; transform: translateZ(0); min-width: 0; }
         .trust-badge { background: var(--wf-text); color: var(--wf-canvas); padding: 12px; text-align: center; font-weight: 700; letter-spacing: 0.05em; border-radius: 2px; }
         .meta-block { border-left: 1px solid var(--wf-hairline); padding-left: 16px; }
         .meta-label { display: block; color: var(--wf-muted); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 4px; }
-        #hash-display { font-variant-numeric: tabular-nums; }
+        #hash-display { font-variant-numeric: tabular-nums; display: block; overflow-wrap: anywhere; word-break: break-all; }
         
         /* GLOBAL FOOTER (DECOUPLED) */
-        .global-footer-wrapper { border-top: 1px solid var(--wf-hairline); background: var(--wf-card); margin-top: 64px; }
+        /* Canvas unified, structural hairline reinstated for anchoring */
+        .global-footer-wrapper { border-top: 1px solid var(--wf-hairline); background: var(--wf-canvas); margin-top: 64px; }
         .global-footer { width: 100%; max-width: 1024px; margin: 0 auto; padding: 48px 24px max(48px, env(safe-area-inset-bottom)); display: grid; grid-template-columns: 1fr 1fr; gap: 64px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--wf-muted); }
         .global-footer h4 { font-size: 0.875rem; color: var(--wf-text); margin-bottom: 8px; text-transform: uppercase; font-weight: 700; }
         .global-footer p { font-size: 0.75rem; margin-bottom: 16px; max-width: 100%; }
 
         /* INTERACTIVE PRIMITIVES */
-        .btn { height: 44px; padding: 0 20px; border: 1px solid var(--wf-hairline); background: var(--wf-canvas); color: var(--wf-text); font-family: var(--font-mono); font-size: 0.875rem; font-weight: 700; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 2px; transition: background 0.2s, border-color 0.2s; touch-action: manipulation; }
+        .btn { height: 44px; padding: 0 20px; border: 1px solid var(--wf-hairline); background: var(--wf-card); color: var(--wf-text); font-family: var(--font-mono); font-size: 0.875rem; font-weight: 700; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 2px; transition: background 0.2s, border-color 0.2s; touch-action: manipulation; }
         .btn svg { display: block; flex-shrink: 0; width: 18px; height: 18px; }
         .btn span { display: block; line-height: 1; transform: translateY(1px); }
         .btn:hover { background: #e9ecef; border-color: var(--wf-text); }
@@ -110,8 +112,7 @@
         #lang-toggle { display: none; }
 
         /* RESPONSIVE DOMINANCE */
-        @media (max-width: 900px) {
-            /* Mobile Geometry applied here: The gap spaces the wordmark from the buttons, and flex: 1 1 0 forces buttons to fill screen width equally */
+        @media (max-width: 1024px) {
             .nav-container { flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
             .desktop-actions { justify-content: center; width: 100%; gap: 8px; }
             .desktop-actions .btn:not(.hide-on-mobile) { flex: 1 1 0; justify-content: center; padding: 0 8px; }
@@ -128,30 +129,30 @@
             .mobile-dock .btn { flex: 1; height: 48px; background: var(--wf-card); }
         }
 
-        /* REGULATORY PRINT EGRESS (BLOOMBERG PROSPECTUS PHYSICS) */
+        /* REGULATORY PRINT EGRESS (INSTITUTIONAL PARITY) */
         .print-only { display: none; }
         @media print {
-            body, .document-canvas, p, h1, h2, h3, h4, .legal-ledger, .global-footer { 
-                font-family: "Georgia", "Times New Roman", serif !important; 
-                color: #000000 !important; 
-                background: #FFFFFF !important; 
-            }
-            .header-bar, .sidebar-ledger, .mobile-dock, .desktop-actions, .desktop-whatsapp, .digital-disclaimer { display: none !important; }
+            body { color: #000000 !important; background: #FFFFFF !important; font-family: var(--font-sans) !important; }
+            
+            /* Retain wordmark as letterhead. Hide UI elements. */
+            .sidebar-ledger, .mobile-dock, .desktop-actions, .desktop-whatsapp, .global-footer-wrapper, input[type="checkbox"] { display: none !important; }
+            
+            .header-bar { position: static; background: transparent; padding: 0 0 16px 0; margin-bottom: 32px; border-bottom: 2px solid #000; backdrop-filter: none; }
+            .wordmark { color: #000; font-size: 14pt; }
+            
             .main-grid { display: block; margin: 0; padding: 0; }
-            .document-canvas { padding: 0; border: none; }
-            .global-footer-wrapper { border-top: 1px solid #000; padding-top: 12px; margin-top: 24px; display: block; page-break-inside: avoid; }
-            .global-footer { padding: 0; display: block; }
+            .document-canvas { padding: 0; background: transparent; }
             
-            p { font-size: 10pt; line-height: 1.35; orphans: 4; widows: 4; page-break-inside: avoid; margin-bottom: 10px; }
-            h1, h2, h3, h4 { page-break-after: avoid; break-after: avoid; color: #000 !important; }
-            h1 { font-size: 18pt; margin-bottom: 16px; max-width: 90%; }
-            h3 { font-size: 12pt; margin-top: 16px; margin-bottom: 8px; }
+            /* Advanced Fragmentation Physics */
+            p, .legal-ledger, .print-only { font-size: 10.5pt; line-height: 1.5; orphans: 4; widows: 4; }
+            h1, h2, h3, h4 { color: #000 !important; break-after: avoid; }
             
-            .document-canvas a::after { content: " (" attr(href) ")"; font-size: 0.85em; color: #333; }
-            .print-only { display: block; margin-top: 24px; page-break-inside: avoid; font-size: 10pt; }
-            .legal-ledger { page-break-inside: avoid; }
-            .quarantine-line { border-top: 1px solid #000; margin: 24px 0 16px 0; }
-            @page { margin: 0.75in 0.5in; }
+            h1 { font-size: 20pt; margin-bottom: 16px; max-width: 100%; overflow-wrap: break-word; line-height: 1.1; letter-spacing: -0.02em; }
+            h3 { font-size: 14pt; margin-top: 24px; }
+            
+            .print-only { display: block; margin-top: 32px; break-inside: avoid; }
+            .legal-ledger { break-inside: avoid; margin-top: 32px; border-top: 1px solid #000; padding-top: 16px; }
+            .quarantine-line { display: none; }
         }
     </style>
 </head>
@@ -252,7 +253,6 @@
 <script>
 document.getElementById('token-wordmark').innerHTML = `Woodfine Capital Projects`;
 
-/* SCRIPT UPDATE: Purged hide-on-mobile from the Manifest Link so it renders on small viewports */
 document.getElementById('token-desktop-nav').innerHTML = `
     <label for="lang-toggle" class="btn btn-primary" aria-label="Toggle Language">
         <span class="btn-en">ESPAÑOL</span><span class="btn-es">ENGLISH</span>
@@ -269,7 +269,7 @@ document.getElementById('token-desktop-nav').innerHTML = `
 const waSvg = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>`;
 
 document.getElementById('token-mobile-dock').innerHTML = `
-    <a href="https://wa.me/16043751196" target="_blank" class="btn btn-action" style="width:100%; border-color: var(--wf-hairline);">
+    <a href="https://wa.me/16043751196" target="_blank" class="btn btn-action" style="border-color: var(--wf-hairline);">
         ${waSvg} <span>WHATSAPP</span>
     </a>
 `;
@@ -288,7 +288,8 @@ document.getElementById('token-sidebar').innerHTML = `
             <strong>Peter M. Woodfine</strong><br>
             Executive Officer<br><br>
             Woodfine Management Corp.<br>
-            <span style="white-space: nowrap;">595 Burrard Street, Lower Concourse</span><br>
+            595 Burrard Street,<br>
+            Lower Concourse<br>
             Vancouver, BC V7X 1A1<br><br>
             <a href="mailto:peter@woodfinegroup.com" style="color:var(--wf-accent); text-decoration:none;">peter@woodfinegroup.com</a><br>
             +1 604-375-1196
@@ -297,10 +298,10 @@ document.getElementById('token-sidebar').innerHTML = `
     
     <div class="meta-block">
         <span class="meta-label">Cryptographic State Hash</span>
-        <span id="hash-display" style="word-break:break-all; font-size:0.75rem;">CALCULATING...</span>
+        <span id="hash-display" style="font-size:0.75rem;">CALCULATING...</span>
     </div>
 
-    <a href="https://wa.me/16043751196" target="_blank" class="btn btn-action desktop-whatsapp" style="width:100%; border-color: var(--wf-hairline);">
+    <a href="https://wa.me/16043751196" target="_blank" class="btn btn-action desktop-whatsapp" style="align-self: stretch; border-color: var(--wf-hairline);">
         ${waSvg} <span>WHATSAPP</span>
     </a>
 `;
@@ -346,7 +347,7 @@ document.getElementById('token-body-es').innerHTML = `
 document.getElementById('token-print-contact').innerHTML = `
     <h3>CONTACT FOR FURTHER INFORMATION:</h3>
     <p>Peter M. Woodfine<br>Executive Officer</p>
-    <p>Woodfine Management Corp.<br><span style="white-space: nowrap;">595 Burrard Street, Lower Concourse</span><br>PO BOX 48295 Bentall<br>Vancouver, BC V7X 1A1</p>
+    <p>Woodfine Management Corp.<br>595 Burrard Street,<br>Lower Concourse<br>PO BOX 48295 Bentall<br>Vancouver, BC V7X 1A1</p>
     <p>peter@woodfinegroup.com<br>+1 604-375-1196<br>www.woodfinegroup.com</p>
 `;
 
@@ -363,7 +364,7 @@ document.getElementById('token-document-disclaimers').innerHTML = `
 document.getElementById('token-global-footer').innerHTML = `
     <div class="copyright-disclaimer">
         <h4>Trademarks & Copyright</h4>
-        <p>Woodfine Capital Projects, Woodfine Management Corp., and PointSav Digital Systems are trademarks of Woodfine Capital Projects Inc. Copyright 2011&ndash;<span id="current-year"></span> Woodfine Management Corp. All rights reserved.</p>
+        <p>Woodfine Capital Projects, Woodfine Management Corp., and PointSav Digital Systems are trademarks of Woodfine Capital Projects Inc. &copy; 2011&ndash;<span id="current-year"></span> Woodfine Management Corp. All rights reserved.</p>
     </div>
     <div class="digital-disclaimer">
         <h4>Digital Infrastructure & Privacy Posture</h4>
