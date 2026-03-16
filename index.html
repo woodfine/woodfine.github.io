@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="theme-color" content="#F7F9FA">
+    <meta name="theme-color" content="#F9FAFB">
     <meta name="color-scheme" content="light only">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     
-    <title>Woodfine | Direct-Hold Solutions</title>
-    <meta name="description" content="Woodfine Management Corp. procures and manages institutional-grade regional real estate via Direct-Hold Solutions. Zero redundant fees. Absolute custodial control.">
-    <meta property="og:title" content="Woodfine Capital Projects">
-    <meta property="og:description" content="Direct-Hold Solutions for Regional Real Estate.">
+    <title>PointSav | Totebox Orchestration</title>
+    <meta name="description" content="PointSav Digital Systems provides the 'Digital First' Operating System for Real Estate Infrastructure. Zero-Cookie Architecture. Verifiable ledgers.">
+    <meta property="og:title" content="PointSav Digital Systems">
+    <meta property="og:description" content="Digital First Operating System for Real Estate Infrastructure.">
     <meta property="og:type" content="article">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23164679%22/></svg>">
-    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect x=%220%22 y=%220%22 width=%22100%22 height=%22100%22 fill=%22%23869FB9%22/></svg>">
+
     <script type="application/ld+json">
     [{
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Woodfine Management Corp.",
-      "url": "https://woodfinegroup.com",
+      "name": "PointSav Digital Systems",
+      "url": "https://pointsav.com",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+1-604-375-1196",
@@ -31,7 +31,7 @@
     {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
-      "headline": "Woodfine Capital Projects Introduces Direct-Hold Solutions",
+      "headline": "PointSav Digital Systems Introduces the Digital First Operating System",
       "datePublished": "2026-03-02T08:00:00Z",
       "author": [{ "@type": "Organization", "name": "Woodfine Management Corp." }]
     }]
@@ -40,65 +40,62 @@
     <style>
         /* TOKENS: POINT-SAV DESIGN SYSTEM */
         :root { 
-            --wf-canvas: #F7F9FA; 
-            --wf-card: #FFFFFF; 
-            --wf-text: #111827; 
-            --wf-muted: #6B7280; 
-            --wf-border: #111827; 
-            --wf-hairline: rgba(17, 24, 39, 0.15);
-            --wf-accent: #164679; 
+            --ps-canvas: #F9FAFB; 
+            --ps-card: #FFFFFF; 
+            --ps-text: #09090B; 
+            --ps-muted: #6B7280; 
+            --ps-border: #E5E7EB; 
+            --ps-accent: #869FB9; 
             --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             --font-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; 
         }
 
-        /* RESET & PHYSICS (MAC TYPOGRAPHY LOCKDOWN) */
+        /* RESET & PHYSICS */
         * { box-sizing: border-box; margin: 0; padding: 0; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         html { text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
-        body { font-family: var(--font-sans); background: var(--wf-canvas); color: var(--wf-text); line-height: 1.5; overflow-x: hidden; }
+        body { font-family: var(--font-sans); background: var(--ps-canvas); color: var(--ps-text); line-height: 1.5; overflow-x: hidden; }
         
         /* LAYOUT ARCHITECTURE */
-        /* Canvas unified, structural hairline reinstated for anchoring */
-        .header-bar { position: sticky; top: 0; background: var(--wf-canvas); border-bottom: 1px solid var(--wf-hairline); padding: max(16px, env(safe-area-inset-top)) 24px 16px 24px; z-index: 100; will-change: transform; transform: translateZ(0); }
+        .header-bar { position: sticky; top: 0; background: rgba(249,250,251,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--ps-border); padding: max(16px, env(safe-area-inset-top)) 24px 16px 24px; z-index: 100; will-change: transform; transform: translateZ(0); }
         .nav-container { width: 100%; max-width: 1024px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
         .wordmark { font-weight: 800; font-size: 1.125rem; letter-spacing: -0.03em; text-transform: uppercase; white-space: nowrap; }
         .desktop-actions { display: flex; gap: 8px; align-items: center; }
         
         .main-grid { width: 100%; max-width: 1024px; margin: 48px auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 300px; gap: 64px; align-items: start; }
         
-        /* CONTENT STYLING (OPEN MANUSCRIPT) */
+        /* CONTENT STYLING */
         .document-canvas { background: transparent; padding: 0; border: none; min-width: 0; }
-        .release-flag { color: var(--wf-accent); font-weight: 700; font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 16px; display: block; }
+        .release-flag { color: var(--ps-accent); font-weight: 700; font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 16px; display: block; }
         h1 { font-size: clamp(2rem, 4vw, 2.5rem); line-height: 1.1; margin-bottom: 32px; letter-spacing: -0.02em; font-weight: 800; }
         h3 { font-size: 1.25rem; margin: 32px 0 16px 0; letter-spacing: -0.01em; font-weight: 700; }
         p { margin-bottom: 16px; max-width: 65ch; font-size: 1.0625rem; }
         strong { font-weight: 700; }
 
-        /* LEGAL LEDGER (DOCUMENT SPECIFIC) */
-        .quarantine-line { border: none; border-top: 1px solid var(--wf-hairline); margin: 64px 0 32px 0; }
-        .legal-ledger { font-family: var(--font-mono); font-size: 0.75rem; color: var(--wf-muted); }
-        .legal-ledger h4 { font-size: 0.875rem; color: var(--wf-text); margin-bottom: 8px; text-transform: uppercase; font-weight: 700; }
+        /* LEGAL LEDGER */
+        .quarantine-line { border: none; border-top: 1px solid var(--ps-border); margin: 40px 0 24px 0; }
+        .legal-ledger { font-family: var(--font-mono); font-size: 0.75rem; color: var(--ps-muted); }
+        .legal-ledger h4 { font-size: 0.875rem; color: var(--ps-text); margin-bottom: 8px; text-transform: uppercase; font-weight: 700; }
         .legal-ledger p { font-size: 0.75rem; margin-bottom: 16px; max-width: 100%; }
 
         /* SIDEBAR LEDGER */
         .sidebar-ledger { position: sticky; top: max(100px, calc(env(safe-area-inset-top) + 80px)); display: flex; flex-direction: column; gap: 24px; font-family: var(--font-mono); font-size: 0.875rem; will-change: transform; transform: translateZ(0); min-width: 0; }
-        .trust-badge { background: var(--wf-text); color: var(--wf-canvas); padding: 12px; text-align: center; font-weight: 700; letter-spacing: 0.05em; border-radius: 2px; }
-        .meta-block { border-left: 1px solid var(--wf-hairline); padding-left: 16px; }
-        .meta-label { display: block; color: var(--wf-muted); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 4px; }
+        .trust-badge { background: var(--ps-text); color: var(--ps-card); padding: 12px; text-align: center; font-weight: 700; letter-spacing: 0.05em; border-radius: 2px; }
+        .meta-block { border-left: 1px solid var(--ps-border); padding-left: 16px; }
+        .meta-label { display: block; color: var(--ps-muted); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 4px; }
         #hash-display { font-variant-numeric: tabular-nums; display: block; overflow-wrap: anywhere; word-break: break-all; }
         
-        /* GLOBAL FOOTER (DECOUPLED) */
-        /* Canvas unified, structural hairline reinstated for anchoring */
-        .global-footer-wrapper { border-top: 1px solid var(--wf-hairline); background: var(--wf-canvas); margin-top: 64px; }
-        .global-footer { width: 100%; max-width: 1024px; margin: 0 auto; padding: 48px 24px max(48px, env(safe-area-inset-bottom)); display: grid; grid-template-columns: 1fr 1fr; gap: 64px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--wf-muted); }
-        .global-footer h4 { font-size: 0.875rem; color: var(--wf-text); margin-bottom: 8px; text-transform: uppercase; font-weight: 700; }
+        /* GLOBAL FOOTER (Tighter Spacing) */
+        .global-footer-wrapper { border-top: 1px solid var(--ps-border); background: var(--ps-canvas); margin-top: 40px; }
+        .global-footer { width: 100%; max-width: 1024px; margin: 0 auto; padding: 32px 24px max(32px, env(safe-area-inset-bottom)); display: grid; grid-template-columns: 1fr 1fr; gap: 40px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--ps-muted); }
+        .global-footer h4 { font-size: 0.875rem; color: var(--ps-text); margin-bottom: 8px; text-transform: uppercase; font-weight: 700; }
         .global-footer p { font-size: 0.75rem; margin-bottom: 16px; max-width: 100%; }
 
-        /* INTERACTIVE PRIMITIVES */
-        .btn { height: 44px; padding: 0 20px; border: 1px solid var(--wf-hairline); background: var(--wf-card); color: var(--wf-text); font-family: var(--font-mono); font-size: 0.875rem; font-weight: 700; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 2px; transition: background 0.2s, border-color 0.2s; touch-action: manipulation; }
+        /* INTERACTIVE PRIMITIVES (PointSav 1px Borders) */
+        .btn { height: 44px; padding: 0 20px; border: 1px solid var(--ps-border); background: var(--ps-card); color: var(--ps-text); font-family: var(--font-mono); font-size: 0.875rem; font-weight: 700; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 2px; transition: background 0.2s, border-color 0.2s; touch-action: manipulation; }
         .btn svg { display: block; flex-shrink: 0; width: 18px; height: 18px; }
         .btn span { display: block; line-height: 1; transform: translateY(1px); }
-        .btn:hover { background: #e9ecef; border-color: var(--wf-text); }
-        .btn-primary { background: var(--wf-text); color: var(--wf-canvas); border-color: var(--wf-text); }
+        .btn:hover { background: #f9fafb; border-color: var(--ps-text); }
+        .btn-primary { background: var(--ps-text); color: var(--ps-card); border-color: var(--ps-text); }
         .btn-primary:hover { background: #000; }
         
         /* MOBILE ACTION BAR */
@@ -122,11 +119,11 @@
             
             .main-grid { grid-template-columns: 1fr; gap: 40px; margin: 32px auto; padding: 0 16px; }
             .sidebar-ledger { position: relative; top: 0; transform: none; }
-            .global-footer { grid-template-columns: 1fr; gap: 24px; padding-bottom: calc(100px + env(safe-area-inset-bottom)); } 
+            .global-footer { grid-template-columns: 1fr; gap: 24px; padding-bottom: calc(80px + env(safe-area-inset-bottom)); } 
             .desktop-whatsapp { display: none !important; } 
             
-            .mobile-dock { display: flex; position: fixed; bottom: 0; left: 0; right: 0; background: var(--wf-canvas); border-top: 1px solid var(--wf-hairline); padding: 12px 16px max(12px, env(safe-area-inset-bottom)) 16px; z-index: 999; box-shadow: 0 -4px 12px rgba(0,0,0,0.05); will-change: transform; transform: translateZ(0); }
-            .mobile-dock .btn { flex: 1; height: 48px; background: var(--wf-card); }
+            .mobile-dock { display: flex; position: fixed; bottom: 0; left: 0; right: 0; background: var(--ps-card); border-top: 1px solid var(--ps-border); padding: 12px 16px max(12px, env(safe-area-inset-bottom)) 16px; z-index: 999; box-shadow: 0 -4px 12px rgba(0,0,0,0.05); will-change: transform; transform: translateZ(0); }
+            .mobile-dock .btn { flex: 1; height: 48px; }
         }
 
         /* REGULATORY PRINT EGRESS (INSTITUTIONAL PARITY) */
@@ -223,7 +220,7 @@
                     network: conn ? conn.effectiveType : "unknown"
                 };
                 const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
-                navigator.sendBeacon("https://telemetry.woodfinegroup.com:8082/telemetry-endpoint", blob);
+                navigator.sendBeacon("https://telemetry.pointsav.com:8081/telemetry-endpoint", blob);
             }
         });
     })();
@@ -251,25 +248,25 @@
 </script>
 
 <script>
-document.getElementById('token-wordmark').innerHTML = `Woodfine Capital Projects`;
+document.getElementById('token-wordmark').innerHTML = `PointSav Digital Systems`;
 
 document.getElementById('token-desktop-nav').innerHTML = `
     <label for="lang-toggle" class="btn btn-primary" aria-label="Toggle Language">
         <span class="btn-en">ESPAÑOL</span><span class="btn-es">ENGLISH</span>
     </label>
-    <a href="https://github.com/woodfine/woodfine-fleet-deployment" target="_blank" class="btn">
+    <a href="https://github.com/pointsav/pointsav-monorepo" target="_blank" class="btn">
         <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg>
-        <span>MANIFEST</span>
+        <span>MONOREPO</span>
     </a>
     <button onclick="window.print()" class="btn hide-on-mobile"><span>PRINT</span></button>
-    <a href="/woodfine_media_release_en.pdf" class="btn btn-en hide-on-mobile" download><span>PDF</span></a>
-    <a href="/woodfine_media_release_es.pdf" class="btn btn-es hide-on-mobile" download><span>PDF</span></a>
+    <a href="/pointsav_media_release_en.pdf" class="btn btn-en hide-on-mobile" download><span>PDF</span></a>
+    <a href="/pointsav_media_release_es.pdf" class="btn btn-es hide-on-mobile" download><span>PDF</span></a>
 `;
 
 const waSvg = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>`;
 
 document.getElementById('token-mobile-dock').innerHTML = `
-    <a href="https://wa.me/16043751196" target="_blank" class="btn btn-action" style="border-color: var(--wf-hairline);">
+    <a href="https://wa.me/16043751196" target="_blank" class="btn btn-action" style="border-color: var(--ps-border);">
         ${waSvg} <span>WHATSAPP</span>
     </a>
 `;
@@ -291,7 +288,7 @@ document.getElementById('token-sidebar').innerHTML = `
             595 Burrard Street,<br>
             Lower Concourse<br>
             Vancouver, BC V7X 1A1<br><br>
-            <a href="mailto:peter@woodfinegroup.com" style="color:var(--wf-accent); text-decoration:none;">peter@woodfinegroup.com</a><br>
+            <a href="mailto:peter@woodfinegroup.com" style="color:var(--ps-accent); text-decoration:none;">peter@woodfinegroup.com</a><br>
             +1 604-375-1196
         </address>
     </div>
@@ -301,70 +298,64 @@ document.getElementById('token-sidebar').innerHTML = `
         <span id="hash-display" style="font-size:0.75rem;">CALCULATING...</span>
     </div>
 
-    <a href="https://wa.me/16043751196" target="_blank" class="btn btn-action desktop-whatsapp" style="align-self: stretch; border-color: var(--wf-hairline);">
+    <a href="https://wa.me/16043751196" target="_blank" class="btn btn-action desktop-whatsapp" style="align-self: stretch; border-color: var(--ps-border);">
         ${waSvg} <span>WHATSAPP</span>
     </a>
 `;
 
 document.getElementById('token-body-en').innerHTML = `
     <time class="release-flag" datetime="2026-03-02">FOR IMMEDIATE RELEASE</time>
-    <h1>Woodfine Capital Projects Introduces Direct-Hold Solutions for Regional Real Estate</h1>
-    <p><strong>Vancouver, British Columbia - March 2, 2026 -</strong> Woodfine Management Corp. ("Woodfine") has introduced Direct-Hold Solutions as the primary financial model for Woodfine Capital Projects Inc. (the "Promoter").</p>
-    <p>The Direct-Hold Solutions serve as the foundational operating entities for the procurement, development, and management of institutional-grade regional real estate. The Direct-Hold Solutions are not investment funds. They are operating enterprises designed to give multi-generational capital direct ownership, long-term security, and independent custodial control over physical assets. At its core, this framework provides the foundation for capital efficiency, Flow-Through Taxation, and real estate syndication.</p>
+    <h1>PointSav Digital Systems Introduces the "Digital First" Operating System for Real Estate Infrastructure</h1>
+    <p><strong>Vancouver, British Columbia - March 2, 2026 -</strong> Woodfine Management Corp. ("Woodfine") has introduced PointSav Digital Systems ("PointSav") as a new digital infrastructure subsidiary of Woodfine Capital Projects Inc. (the "Promoter").</p>
+    <p>PointSav serves as the foundational operating system architecture for Woodfine, its administrator and first customer. PointSav is not a software-as-a-service (SaaS) platform. It is an operating system architecture designed to give building operators direct ownership, long-term security, and independent control over their physical assets and data. At its core, PointSav provides the foundation for business administration, record keeping, and cyberphysical connectivity.</p>
     
-    <h3>The Financial Model</h3>
-    <p>Woodfine abandons the traditional structure of layered private equity funds and legacy Joint Ventures. Instead, it is actively deploying a three-pillar financial model comprising the Narrow Bank Model, the Co-Location Mandate, and Regulated Reporting Entities:</p>
-    <p><strong>1. Narrow Bank Model:</strong> A secure capital structure designed to eliminate reliance on commercial construction loans. The initial assets are built entirely with perpetual equity. Once lease cash flow stabilizes, the vehicles self-issue Exchange-Traded First Secured Mortgage Debentures. Debt issuance is strictly capped by a mandatory 1.2 Interest Coverage Ratio, funding up to 100% of development costs to date.</p>
-    <p><strong>2. Co-Location Mandate:</strong> At the center of this model is a strict Qualified Investment strategy targeting regional markets. These markets possess stable demographic demand for essential services but suffer from a persistent shortfall in institutional-grade construction. Woodfine procures, develops, and manages professional office buildings directly adjacent to major national retailers, such as Walmart, Costco, and Home Depot. By transposing the resilience of daily retail foot traffic onto professional spaces, this strategy secures medical, academic, government, and professional tenants. These sectors are inherently resistant to Work From Home (WFH) and AI disruption because they require physical, in-person operations.</p>
-    <p><strong>3. Regulated Reporting Entities:</strong> The vehicles operate strictly as reporting issuers in their respective jurisdictions. This design passes income directly to Investors via Flow-Through Taxation, applying taxation at individual rates rather than at the corporate level. Because the entities are regulated, the Investment Units function as Freely Transferable private equity. Investors retain absolute custodial control without redemption queues or manager-initiated exit mechanics.</p>
+    <h3>The Three-Track System</h3>
+    <p>PointSav abandons the traditional model of renting cloud databases. Instead, it is actively deploying a 3-Track architecture comprising the PointSav Private Network, Totebox Orchestration, and PointSav Workplace OS:</p>
+    <p><strong>1. Private Network:</strong> A secure routing layer engineered to connect physical buildings and isolated data vaults to command centers without exposing data to the public internet.</p>
+    <p><strong>2. Orchestration:</strong> At the center of the system are distinct, independent data vaults known as Totebox Archives. For Woodfine, these are deployed in three primary configurations: Personnel Archives, Corporate Archives, and Property Archives, ensuring absolute data segregation.</p>
+    <p><strong>3. Workplace OS:</strong> A secure desktop environment that outputs deterministic, machine-readable files, not hidden database entries.</p>
     
-    <h3>Structural Governance</h3>
-    <p>Instead of forcing international capital into a single, multi-jurisdictional fund, the framework utilizes domestic flow-through vehicles. This allows independent Asset Managers and banking syndicates to originate tailored Club Deals, Private SPVs, or local Access Funds. Individual fee models can be applied while integrating foreign capital seamlessly into the Direct-Hold Solutions without transferring international compliance burdens onto the core enterprise.</p>
-    
-    <h3>Public Financial Disclosure & Capital Efficiency</h3>
-    <p>This structure is designed to guarantee direct control and capital preservation. This release serves as a public disclosure establishing the Direct-Hold Solutions framework. The economic model avoids variable performance fees at the enterprise level. Woodfine takes its compensation entirely as Retained Equity—a 10% ownership stake. This preserves the capital structure entirely for the asset, eliminating redundant fees and providing a highly efficient base for independent syndication.</p>
+    <h3>Public Technical Disclosure & Structural Compliance</h3>
+    <p>PointSav is designed to guarantee operational trust (SOC 3) and structural data ownership (DARP). This release serves as a public disclosure establishing prior art for the PointSav architecture. The architecture achieves compliance by hardcoding Six Orchestration Contracts into a proprietary no_std Rust Capability-Based Manager.</p>
 `;
 
 document.getElementById('token-body-es').innerHTML = `
     <time class="release-flag" datetime="2026-03-02">PARA PUBLICACIÓN INMEDIATA</time>
-    <h1>Woodfine Capital Projects Presenta Soluciones de Tenencia Directa para Bienes Inmuebles Regionales</h1>
-    <p><strong>Vancouver, Columbia Británica - 2 de Marzo de 2026 -</strong> Woodfine Management Corp. ("Woodfine") ha introducido las Soluciones de Tenencia Directa como el modelo financiero principal para Woodfine Capital Projects Inc. (el "Promotor").</p>
-    <p>Las Soluciones de Tenencia Directa sirven como las entidades operativas fundamentales para la adquisición, desarrollo y gestión de bienes inmuebles regionales de grado institucional. Las Soluciones de Tenencia Directa no son fondos de inversión. Son empresas operativas diseñadas para otorgar al capital multigeneracional propiedad directa, seguridad a largo plazo y control de custodia independiente sobre activos físicos. En su núcleo, este marco proporciona la base para la eficiencia del capital, la Tributación de Flujo Continuo (Flow-Through Taxation) y la sindicación inmobiliaria.</p>
+    <h1>PointSav Digital Systems Presenta el Sistema Operativo de "Prioridad Digital" para la Infraestructura Inmobiliaria</h1>
+    <p><strong>Vancouver, Columbia Británica - 2 de Marzo de 2026 -</strong> Woodfine Management Corp. ("Woodfine") ha introducido PointSav Digital Systems ("PointSav") como una nueva subsidiaria de infraestructura digital de Woodfine Capital Projects Inc. (el "Promotor").</p>
+    <p>PointSav sirve como la arquitectura fundamental del sistema operativo para Woodfine, su administrador y primer cliente. PointSav no es una plataforma de software como servicio (SaaS). Es una arquitectura de sistema operativo diseñada para otorgar a los operadores de edificios propiedad directa, seguridad a largo plazo y control independiente sobre sus activos y datos físicos.</p>
     
-    <h3>El Modelo Financiero</h3>
-    <p>Woodfine abandona la estructura tradicional de fondos de capital privado en capas y empresas conjuntas heredadas. En su lugar, está desplegando activamente un modelo financiero de tres pilares que comprende el Modelo de Banco Estrecho, el Mandato de Coubicación y las Entidades Emisoras Reguladas:</p>
-    <p><strong>1. Modelo de Banco Estrecho:</strong> Una estructura de capital segura diseñada para eliminar la dependencia de los préstamos comerciales de construcción. Los activos iniciales se construyen completamente con capital perpetuo. Una vez que el flujo de caja del arrendamiento se estabiliza, los vehículos autoemiten Obligaciones Hipotecarias Cotizadas en Bolsa. La emisión de deuda está estrictamente limitada por un Índice de Cobertura de Intereses obligatorio de 1.2, financiando hasta el 100% de los costos de desarrollo hasta la fecha.</p>
-    <p><strong>2. Mandato de Coubicación:</strong> En el centro de este modelo hay una estricta estrategia de Inversión Calificada dirigida a mercados regionales. Estos mercados poseen una demanda demográfica estable de servicios esenciales, pero sufren de un déficit persistente en la construcción de grado institucional. Woodfine adquiere, desarrolla y administra edificios de oficinas profesionales directamente adyacentes a los principales minoristas nacionales, como Walmart, Costco y Home Depot. Esta estrategia asegura inquilinos médicos, académicos, gubernamentales y profesionales, sectores inherentemente resistentes al trabajo desde casa (WFH) y a la interrupción de la IA porque requieren operaciones físicas presenciales.</p>
-    <p><strong>3. Entidades Emisoras Reguladas:</strong> Los vehículos operan estrictamente como emisores de informes en sus respectivas jurisdicciones. Este diseño pasa los ingresos directamente a los inversores aplicando impuestos a sus tasas individuales en lugar de a nivel corporativo. Debido a que las entidades están reguladas, las Unidades de Inversión funcionan como capital privado Libremente Transferible. Los inversores conservan el control de custodia absoluto sin colas de reembolso ni mecanismos de salida iniciados por el administrador.</p>
+    <h3>El Sistema de Tres Vías</h3>
+    <p>PointSav abandona el modelo tradicional de alquilar bases de datos en la nube. En su lugar, está desplegando activamente una Arquitectura de 3 Vías que comprende la PointSav Private Network, Totebox Orchestration, y PointSav Workplace OS:</p>
+    <p><strong>1. Red Privada:</strong> Una capa de enrutamiento segura diseñada para conectar edificios físicos y bóvedas de datos aisladas a los centros de comando sin exponer los datos a la Internet pública.</p>
+    <p><strong>2. Orchestration:</strong> En el centro del sistema se encuentran bóvedas de datos independientes llamadas Archivos Totebox. Para Woodfine, se despliegan en tres configuraciones principales: Archivos de Personal, Archivos Corporativos y Archivos de Propiedad, asegurando la segregación absoluta de los datos.</p>
+    <p><strong>3. Workplace OS:</strong> Un entorno de escritorio seguro que produce archivos deterministas legibles por máquina, no entradas de bases de datos ocultas.</p>
     
-    <h3>Gobernanza Estructural</h3>
-    <p>En lugar de forzar el capital internacional en un único fondo multijurisdiccional, el marco utiliza vehículos de flujo continuo nacionales. Esto permite a los Administradores de Activos independientes y sindicatos bancarios originar Acuerdos de Club, SPV Privados o Fondos de Acceso locales adaptados. Pueden aplicar sus propios modelos de tarifas mientras integran capital extranjero sin transferir las cargas de cumplimiento internacional a la empresa principal.</p>
-    
-    <h3>Divulgación Financiera Pública y Eficiencia de Capital</h3>
-    <p>El modelo económico evita tarifas de rendimiento variables a nivel empresarial. Woodfine toma su compensación completamente como Capital Retenido: una participación del 10%. Esto preserva la estructura de capital completamente para el activo, eliminando tarifas redundantes y proporcionando una base altamente eficiente para la sindicación independiente.</p>
+    <h3>Divulgación Técnica Pública y Cumplimiento Estructural</h3>
+    <p>PointSav está diseñado para garantizar la confianza operativa (SOC 3) y la propiedad estructural de los datos (DARP). Este comunicado sirve como una divulgación pública que establece la técnica anterior (prior art) para la arquitectura PointSav. La arquitectura logra el cumplimiento al codificar Seis Contratos de Orquestación en un Gestor de Capacidades propietario en Rust no_std.</p>
 `;
 
 document.getElementById('token-print-contact').innerHTML = `
     <h3>CONTACT FOR FURTHER INFORMATION:</h3>
     <p>Peter M. Woodfine<br>Executive Officer</p>
     <p>Woodfine Management Corp.<br>595 Burrard Street,<br>Lower Concourse<br>PO BOX 48295 Bentall<br>Vancouver, BC V7X 1A1</p>
-    <p>peter@woodfinegroup.com<br>+1 604-375-1196<br>www.woodfinegroup.com</p>
+    <p>peter@woodfinegroup.com<br>+1 604-375-1196</p>
 `;
 
 // DOCUMENT-SPECIFIC DISCLAIMERS
 document.getElementById('token-document-disclaimers').innerHTML = `
     <h4>Multi-Jurisdictional Securities Laws</h4>
-    <p>Shares in the Promoter, Investment Units in the Direct-Hold Solutions, and any related financial instruments have not been, and will not be, registered under the United States Securities Act of 1933, as amended, nor under the securities laws of Canada, the Ley del Mercado de Valores of Mexico, or the Ley de los Mercados de Valores of Spain, and they may not be offered or sold in these jurisdictions absent registration or an applicable exemption from registration requirements. This release does not constitute an offer to sell or the solicitation of an offer to buy. There will be no sale of shares or Investment Units in any province, state, or jurisdiction in which such offer, solicitation, or sale would be unlawful prior to registration or qualification under applicable securities laws and regulations.</p>
+    <p>Shares in the Promoter, Investment Units in the Direct-Hold Solutions, and any related financial instruments have not been, and will not be, registered under the United States Securities Act of 1933, as amended, nor under the securities laws of Canada, the Ley del Mercado de Valores of Mexico, or the Ley de los Mercados de Valores of Spain, and they may not be offered or sold in these jurisdictions absent registration or an applicable exemption from registration requirements. This release does not constitute an offer to sell or the solicitation of an offer to buy.</p>
     
     <h4>Continuous Disclosure and Forward-Looking Statements</h4>
-    <p>This release contains forward-looking information within the meaning of applicable international securities legislation. Forward-looking information in this release includes, but is not limited to, statements regarding the integration timeline, cost structures, and operational capabilities of the Direct-Hold Solutions model. These statements are based on the expectations and assumptions made by management, specifically the assumption that the development of Qualified Investments will proceed without unforeseen construction delays. Actual results, performance, and plans can differ materially from those anticipated due to a number of material risk factors. Management disclaims any intention or obligation to revise any forward-looking statements, except as required pursuant to applicable securities legislation.</p>
+    <p>This release contains forward-looking information within the meaning of applicable international securities legislation. Forward-looking information in this release includes, but is not limited to, statements regarding the integration timeline, cost structures, operational capabilities of the PointSav architecture, and the anticipated compliance benefits (SOC 3 and DARP). These statements are based on expectations and assumptions made by management, specifically the assumption that deployment to hardware endpoints will proceed without supply chain disruptions. Actual results, performance, and plans can differ materially from those anticipated.</p>
 `;
 
-// SITE-WIDE GLOBAL FOOTER
+// SITE-WIDE GLOBAL FOOTER (HIDDEN ON PRINT)
 document.getElementById('token-global-footer').innerHTML = `
     <div class="copyright-disclaimer">
         <h4>Trademarks & Copyright</h4>
-        <p>Woodfine Capital Projects, Woodfine Management Corp., and PointSav Digital Systems are trademarks of Woodfine Capital Projects Inc. &copy; 2011&ndash;<span id="current-year"></span> Woodfine Management Corp. All rights reserved.</p>
+        <p>PointSav Digital Systems, Woodfine Capital Projects, and Woodfine Management Corp. are trademarks of Woodfine Capital Projects Inc. &copy; 2011&ndash;${new Date().getFullYear()} Woodfine Management Corp. All rights reserved.</p>
     </div>
     <div class="digital-disclaimer">
         <h4>Digital Infrastructure & Privacy Posture</h4>
