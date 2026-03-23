@@ -110,7 +110,7 @@
         /* GLOBAL FOOTER */
         .global-footer-wrapper { border-top: 1px solid var(--wf-hairline); background: var(--wf-canvas); margin-top: 40px; }
         .global-footer { width: 100%; max-width: 1024px; margin: 0 auto; padding: 32px 24px max(32px, env(safe-area-inset-bottom)); display: grid; grid-template-columns: 1fr 1fr; gap: 40px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--wf-muted); }
-        .global-footer h4 { font-size: 0.875rem; color: var(--wf-text); margin-bottom: 8px; text-transform: uppercase; font-weight: 700; }
+        .global-footer h4 { font-size: 0.875rem; color: var(--wf-text); margin-bottom: 8px; text-transform: uppercase; font-weight: 700; min-height: 2.8em; }
         .global-footer p { font-size: 0.75rem; margin-bottom: 16px; max-width: 100%; }
 
         /* INTERACTIVE PRIMITIVES */
@@ -144,6 +144,7 @@
             .sidebar-ledger { position: relative; top: 0; transform: none; }
             .quarantine-line { margin: 16px 0 32px 0; }
             .global-footer { grid-template-columns: 1fr; gap: 24px; padding-bottom: calc(80px + env(safe-area-inset-bottom)); } 
+            .global-footer h4 { min-height: auto; }
             .desktop-whatsapp { display: none !important; } 
             
             .mobile-dock { display: flex; position: fixed; bottom: 0; left: 0; right: 0; background: var(--wf-card); border-top: 1px solid var(--wf-hairline); padding: 12px 16px max(12px, env(safe-area-inset-bottom)) 16px; z-index: 999; box-shadow: 0 -4px 12px rgba(0,0,0,0.05); will-change: transform; transform: translateZ(0); }
@@ -163,13 +164,13 @@
             p, .legal-ledger, .print-only, .takeaways-list li, .executive-abstract { font-size: 10.5pt; line-height: 1.5; orphans: 4; widows: 4; }
             h1, h2, h3, h4 { color: #000 !important; break-after: avoid; }
             
-            .hook-title { font-size: 14pt; margin-bottom: 12px; margin-left: 0; } 
-            .manuscript-title { font-size: 20pt; margin-bottom: 16px; max-width: 100%; overflow-wrap: break-word; line-height: 1.1; letter-spacing: -0.02em; }
+            .hook-title { font-size: 14pt; margin-bottom: 12px; margin-left: 0; max-width: 85%; } 
+            .manuscript-title { font-size: 20pt; margin-bottom: 16px; max-width: 85%; overflow-wrap: break-word; line-height: 1.1; letter-spacing: -0.02em; }
             h3 { font-size: 14pt; margin-top: 24px; }
             
             .abstract-label { display: none; }
             .executive-abstract { border-left: 2px solid #000; padding-left: 16px; margin-bottom: 24px; }
-            .takeaways-box { break-inside: avoid; border: 2px solid #000; padding: 16px; margin-bottom: 32px; background: transparent; }
+            .takeaways-box { break-inside: avoid; border: none; padding: 0; margin-bottom: 32px; background: transparent; max-width: 85%; }
             .takeaways-header { color: #000; border-bottom: 1px solid #000; padding-bottom: 8px; margin-bottom: 12px; }
             .takeaways-list li::before { color: #000; font-size: 0.75rem; line-height: 1.8; left: 0; }
             .takeaways-list li { padding-left: 16px; }
@@ -413,7 +414,7 @@ document.getElementById('token-document-disclaimers').innerHTML = `
 document.getElementById('token-global-footer').innerHTML = `
     <div class="copyright-disclaimer">
         <h4>Important notice regarding intellectual property and trademarks</h4>
-        <p>Woodfine Capital Projects, Woodfine Management Corp, PointSav Digital Systems, Totebox Orchestration, and Totebox Archive are trademarks owned by Woodfine Capital Projects Inc. This notice serves as a formal declaration of intellectual property rights, asserting continuous use in commerce regardless of the omission of the &trade; or &reg; symbols in the accompanying text. All operational and architectural system designations (including but not limited to PointSav Console OS, PointSav Infrastructure OS, PointSav MediaKit OS, PointSav Network OS, PointSav PrivateGit OS, PointSav Workplace OS, Totebox Integration OS, and Totebox OS) are proprietary structural wordmarks utilized exclusively within the PointSav Digital Systems architecture.</p>
+        <p>Woodfine Capital Projects, Woodfine Management Corp., PointSav Digital Systems, Totebox Orchestration, and Totebox Archive are trademarks owned by Woodfine Capital Projects Inc. This notice serves as a formal declaration of intellectual property rights, asserting continuous use in commerce regardless of the omission of the &trade; or &reg; symbols in the accompanying text. All operational and architectural system designations (including but not limited to PointSav Console OS, PointSav Infrastructure OS, PointSav MediaKit OS, PointSav Network OS, PointSav PrivateGit OS, PointSav Workplace OS, Totebox Integration OS, and Totebox OS) are proprietary structural wordmarks utilized exclusively within the PointSav Digital Systems architecture.</p>
     </div>
     <div class="digital-disclaimer">
         <h4>Digital Infrastructure & Privacy Posture</h4>
@@ -442,7 +443,7 @@ document.getElementById('token-article-takeaways-en').innerHTML = `
     <div class="takeaways-box">
         <div class="takeaways-header">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-            <span>TAKEAWAYS</span>
+            <span>HIGHLIGHTS</span>
         </div>
         <ul class="takeaways-list">
             <li>As restrictions ease on private market access, a structural shift is drawing multi-generational capital toward direct-hold real estate ownership.</li>
@@ -480,7 +481,7 @@ document.getElementById('token-article-takeaways-es').innerHTML = `
     <div class="takeaways-box">
         <div class="takeaways-header">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-            <span>PUNTOS CLAVE</span>
+            <span>PUNTOS DESTACADOS</span>
         </div>
         <ul class="takeaways-list">
             <li>A medida que disminuyen las restricciones sobre el acceso al mercado privado, un cambio estructural est&aacute; atrayendo capital multigeneracional hacia la propiedad de bienes ra&iacute;ces de tenencia directa.</li>
