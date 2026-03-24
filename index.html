@@ -154,33 +154,51 @@
         /* REGULATORY PRINT EGRESS */
         .print-only { display: none; }
         @media print {
-            body { color: #000000 !important; background: #FFFFFF !important; font-family: var(--font-sans) !important; }
-            .sidebar-ledger, .mobile-dock, .desktop-actions, .desktop-whatsapp, .global-footer-wrapper, input[type="checkbox"] { display: none !important; }
-            .header-bar { position: static; background: transparent; padding: 0 0 16px 0; margin-bottom: 32px; border-bottom: 2px solid #000; backdrop-filter: none; }
-            .wordmark { color: #000; font-size: 14pt; }
+            @page {
+                size: letter;
+                margin: 1in;
+            }
+            body { 
+                color: #000000 !important; 
+                background: #FFFFFF !important; 
+                font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, Georgia, 'Times New Roman', serif !important; 
+            }
+            .sidebar-ledger, .mobile-dock, .desktop-actions, .desktop-whatsapp, .global-footer-wrapper, input[type="checkbox"], .quarantine-line { display: none !important; }
+            
+            .header-bar { position: static; background: transparent; padding: 0 0 16px 0; margin-bottom: 32px; border-bottom: none; backdrop-filter: none; }
+            .wordmark { color: #000000; font-size: 14pt; font-family: var(--font-sans); }
+            
             .main-grid { display: block; margin: 0; padding: 0; }
             .document-canvas { padding: 0; background: transparent; }
             
             p, .legal-ledger, .print-only, .takeaways-list li, .executive-abstract { font-size: 10.5pt; line-height: 1.5; orphans: 4; widows: 4; }
-            h1, h2, h3, h4 { color: #000 !important; break-after: avoid; }
+            h1, h2, h3, h4 { color: #000000 !important; break-after: avoid; page-break-after: avoid; }
             
-            .hook-title { font-size: 14pt; margin-bottom: 12px; margin-left: 0; max-width: 85%; } 
-            .manuscript-title { font-size: 20pt; margin-bottom: 16px; max-width: 85%; overflow-wrap: break-word; line-height: 1.1; letter-spacing: -0.02em; }
-            h3 { font-size: 14pt; margin-top: 24px; }
+            .hook-title { font-size: 16pt; margin-bottom: 12px; margin-left: 0; max-width: 100%; } 
+            .manuscript-title { font-size: 22pt; margin-bottom: 16px; max-width: 100%; overflow-wrap: break-word; line-height: 1.1; letter-spacing: -0.02em; }
+            h3 { font-size: 14pt; margin-top: 24pt; }
             
             .abstract-label { display: none; }
-            .executive-abstract { border-left: 2px solid #000; padding-left: 16px; margin-bottom: 24px; }
-            .takeaways-box { break-inside: avoid; border: none; padding: 0; margin-bottom: 32px; background: transparent; max-width: 85%; }
-            .takeaways-header { color: #000; border-bottom: 1px solid #000; padding-bottom: 8px; margin-bottom: 12px; }
-            .takeaways-list li::before { color: #000; font-size: 0.75rem; line-height: 1.8; left: 0; }
+            .executive-abstract { border-left: 2px solid #000000; padding-left: 16px; margin-bottom: 24px; }
+            
+            .takeaways-box { 
+                break-inside: avoid; 
+                page-break-inside: avoid;
+                border: none; 
+                padding: 0; 
+                margin-bottom: 32px; 
+                background: transparent; 
+                max-width: 100%; 
+            }
+            .takeaways-header { color: #000000; border-bottom: none; padding-bottom: 0; margin-bottom: 12px; }
+            .takeaways-list li::before { color: #000000; font-size: 0.75rem; line-height: 1.8; left: 0; }
             .takeaways-list li { padding-left: 16px; }
             
-            .ledger-divider { border-top: 2px solid #000; margin: 32px 0; }
-            .ledger-divider span { background: #FFF; color: #000; }
+            .ledger-divider { border-top: none; margin: 32px 0; font-weight: bold; }
+            .ledger-divider span { background: transparent; color: #000000; position: static; padding-right: 0; }
 
-            .print-only { display: block; margin-top: 32px; break-inside: avoid; }
-            .document-footer { break-inside: avoid; margin-top: 32px; border-top: 1px solid #000; padding-top: 16px; }
-            .quarantine-line { display: none; }
+            .print-only { display: block; margin-top: 32px; break-inside: avoid; page-break-inside: avoid; }
+            .document-footer { break-inside: avoid; page-break-inside: avoid; margin-top: 32px; border-top: 1px solid #000000; padding-top: 16px; }
         }
     </style>
 </head>
