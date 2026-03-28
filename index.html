@@ -292,7 +292,7 @@
                     network: conn ? conn.effectiveType : "unknown"
                 };
                 const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
-                navigator.sendBeacon("https://telemetry.woodfinegroup.com:8082/telemetry-endpoint", blob);
+                navigator.sendBeacon("https://telemetry.woodfinegroup.com/telemetry-endpoint", blob);
             }
         });
     })();
