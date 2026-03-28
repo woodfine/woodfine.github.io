@@ -291,7 +291,7 @@
                     lang_browser: navigator.language || "unknown",
                     network: conn ? conn.effectiveType : "unknown"
                 };
-                const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+                const blob = new Blob([JSON.stringify(payload)], { type: 'text/plain' });
                 navigator.sendBeacon("https://telemetry.woodfinegroup.com/telemetry-endpoint", blob);
             }
         });
