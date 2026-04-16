@@ -1,26 +1,26 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/woodfine/woodfine-media-assets/main/ASSET-SIGNET-MASTER.svg" width="80" alt="Woodfine Signet">
+<img src="https://raw.githubusercontent.com/woodfine/woodfine-media-assets/main/ASSET-SIGNET-MASTER.svg" width="64" alt="Woodfine Management Corp.">
 
 # woodfine.github.io
-### *Tier-4 Edge Delivery | Public Interface*
+### *Public Web Presence* · *Presencia Web Pública*
 
-[![Network](https://img.shields.io/badge/Network-Tier_4_Edge-164679?style=flat-square)](#)
-[![Telemetry](https://img.shields.io/badge/Telemetry-Zero_Cookie-54924E?style=flat-square)](#)
-[![Status](https://img.shields.io/badge/Status-Operational-54924E?style=flat-square)](#)
+[![Telemetry: Zero-Cookie](https://img.shields.io/badge/Telemetry-Zero--Cookie-22863a.svg?style=flat-square)](#)
+[![Status: Active](https://img.shields.io/badge/Status-Active-0075ca.svg?style=flat-square)](#)
 
-[ **Fleet Manifest** ](https://github.com/woodfine/woodfine-fleet-manifest) | [ **Corporate Governance** ](https://github.com/woodfine/content-wiki-corporate)
+[ **Fleet Deployment** ](https://github.com/woodfine/woodfine-fleet-deployment) &nbsp;·&nbsp; [ **Corporate Governance** ](https://github.com/woodfine/content-wiki-corporate)
 
 </div>
 
 ---
 
 <details>
-<summary><b>🛡️ VIEW EDGE ROUTING MANDATE</b></summary>
+<summary><b>→ About This Repository</b></summary>
 <br>
-This repository acts as the live, public-facing Tier-4 Edge Delivery network for Woodfine Capital Projects Inc. It serves the highly optimized, statically compiled Brutalist HTML/CSS interfaces directly to the public web. It acts as the physical origin point for the Sovereign Telemetry Engine, piping Zero-Cookie intelligence back to the air-gapped Tier-2 GCP Node via Port 8082.
+This repository is the public-facing web delivery environment for woodfinegroup.com. It serves statically compiled interfaces directly to the public web and operates a zero-cookie, zero-session-ID telemetry pipeline using native browser APIs. Visitor data is collected without personally identifiable information and routed to an air-gapped cloud relay via the PointSav Private Network.
 <br><br>
 </details>
 
 ---
+
 *© 2026 Woodfine Management Corp.*
