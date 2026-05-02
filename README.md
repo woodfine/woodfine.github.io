@@ -58,3 +58,7 @@ legal completo, el cual es la versión autoritativa.
 Copyright (c) 2026 Woodfine Capital Projects Inc.. Se reservan todos los
 derechos no concedidos expresamente por la licencia.
 <!-- END: factory-release-engineering license-section -->
+
+---
+
+*Woodfine Capital Projects™, Woodfine Management Corp™, PointSav Digital Systems™, Totebox Orchestration™, and Totebox Archive™ are trademarks of Woodfine Capital Projects Inc., used in Canada, the United States, Latin America, and Europe. All other trademarks are the property of their respective owners.*
