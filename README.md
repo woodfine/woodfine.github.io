@@ -25,6 +25,11 @@ This repository is the public-facing web delivery environment for woodfinegroup.
 
 *© 2026 Woodfine Management Corp.*
 
+
+---
+
+*Woodfine Capital Projects™, Woodfine Management Corp™, PointSav Digital Systems™, Totebox Orchestration™, and Totebox Archive™ are trademarks of Woodfine Capital Projects Inc., used in Canada, the United States, Latin America, and Europe. All other trademarks are the property of their respective owners.*
+
 <!-- BEGIN: factory-release-engineering license-section -->
 <!-- ================================================================== -->
 <!-- This section is generated from factory-release-engineering.         -->
@@ -39,7 +44,7 @@ which is authoritative.
 
 
 
-Copyright (c) 2026 Woodfine Capital Projects Inc.. All rights not expressly
+Copyright © 2026 Woodfine Capital Projects Inc. — all rights not expressly
 granted by the license are reserved.
 
 <!-- ================================================================== -->
@@ -55,10 +60,6 @@ legal completo, el cual es la versión autoritativa.
 
 
 
-Copyright (c) 2026 Woodfine Capital Projects Inc.. Se reservan todos los
+Copyright © 2026 Woodfine Capital Projects Inc. — se reservan todos los
 derechos no concedidos expresamente por la licencia.
 <!-- END: factory-release-engineering license-section -->
-
----
-
-*Woodfine Capital Projects™, Woodfine Management Corp™, PointSav Digital Systems™, Totebox Orchestration™, and Totebox Archive™ are trademarks of Woodfine Capital Projects Inc., used in Canada, the United States, Latin America, and Europe. All other trademarks are the property of their respective owners.*
